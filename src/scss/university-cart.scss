@@ -1,0 +1,374 @@
+$faculty-name-width: 216px;
+$profession-width: 237px;
+$faculty-theme-width: 107px;
+$paid-place-width: 107px;
+$paid-points-width: 107px;
+$free-place-width: 107px;
+$free-points-width: 107px;
+$total-width: 135px;
+
+.univer {
+    max-width: 100%;
+    overflow: hidden;
+
+    // .univer__body
+
+    &__body {
+        h1 {
+            margin: 25px 0 44px 0;
+            font-style: normal;
+            font-weight: 700;
+            font-size: 36px;
+            line-height: 44px;
+            color: #233066;
+        }
+        h3 {
+            font-style: normal;
+            font-weight: 450;
+            font-size: 18px;
+            line-height: 22px;
+            margin: 29px 0 47px 0;
+            color: #233066;
+        }
+    }
+
+    // .univer__links
+
+    &__links {
+        margin: 24px 0 39px 0;
+        display: flex;
+        align-items: center;
+        & > :nth-child(2) {
+            margin: 0 65px;
+        }
+        a {
+            font-style: normal;
+            font-weight: 700;
+            font-size: 18px;
+            line-height: 22px;
+            color: #233066;
+        }
+    }
+
+    // .univer__information
+
+    &__information {
+        display: flex;
+        align-items: flex-start;
+        margin-bottom: 31px;
+
+        .selection-logo {
+            width: 221px;
+            height: 130px;
+        }
+
+        // .univer__information-logo
+
+        &-logo {
+            margin-right: 20px;
+            width: 270px;
+            height: 222px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #a1b4f2;
+            border-radius: 10px;
+        }
+
+        // .univer__information-content
+
+        &-content {
+        }
+
+        // .univer__information-top
+
+        &-top {
+            position: relative;
+            padding: 7px 0 10px 0;
+
+            &:before {
+                position: absolute;
+                content: "";
+                left: -50px;
+                top: 0;
+                width: 687px;
+                height: 100%;
+                background: #ffffff;
+                border-radius: 20px;
+                z-index: -1;
+            }
+        }
+
+        // .univer__information-adress
+
+        &-adress {
+            label {
+                display: block;
+                font-style: normal;
+                font-weight: 400;
+                font-size: 12px;
+                line-height: 15px;
+                color: #233066;
+            }
+
+            a {
+                display: block;
+                margin: 3px 0 15px 0;
+                font-style: normal;
+                font-weight: 400;
+                font-size: 22px;
+                line-height: 27px;
+                color: #233066;
+            }
+        }
+
+        // .univer__information-data
+
+        &-data {
+            display: flex;
+            align-items: center;
+            :first-child {
+                margin-right: 44px;
+            }
+            p {
+                font-style: normal;
+                font-weight: 400;
+                font-size: 12px;
+                line-height: 15px;
+                color: #233066;
+                span {
+                    font-weight: 700;
+                }
+            }
+        }
+
+        // .univer__information-points
+
+        &-points {
+            h4 {
+                margin: 25px 0 5px 0;
+                font-style: normal;
+                font-weight: 700;
+                font-size: 18px;
+                line-height: 22px;
+                color: #233066;
+            }
+        }
+
+        ol {
+            display: grid;
+            grid-template-columns: repeat(3, auto);
+            grid-template-rows: auto;
+            gap: 0 35px;
+
+            li {
+                font-style: normal;
+                font-weight: 400;
+                font-size: 14px;
+                line-height: 17px;
+                color: #233066;
+                span {
+                    font-weight: 700;
+                }
+            }
+        }
+    }
+
+    // .univer__cart
+
+    &__cart {
+        .univer__table-body {
+            & > :nth-child(4),
+            & > :nth-child(5),
+            & > :nth-child(6),
+            & > :nth-child(4n + 6),
+            & > :nth-child(5n + 6),
+            & > :nth-child(6n + 6) {
+                position: relative;
+                &:before {
+                    position: absolute;
+                    content: "";
+                    left: 50%;
+                    transform: translate(-50%, 0);
+                    top: 0;
+                    width: 100vw;
+                    height: 100%;
+                    background-color: #d3ecf4;
+                    z-index: -1;
+                }
+            }
+
+            & > :nth-child(3n) {
+                li {
+                    padding-bottom: 20px;
+                }
+            }
+
+            & > :first-child,
+            & > :nth-child(4),
+            & > :nth-child(4n + 3) {
+                li {
+                    padding-top: 17px;
+                }
+            }
+        }
+    }
+
+    // .univer__table
+
+    &__table {
+        // .univer__table-head
+
+        &-head {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            margin-bottom: 15px;
+
+            li {
+                font-style: normal;
+                font-weight: 750;
+                font-size: 12px;
+                line-height: 15px;
+                color: #233066;
+                width: 100%;
+
+                &.head-faculty {
+                    flex: 0 1 $faculty-name-width;
+                    padding-right: 20px;
+                }
+                &.head-profession {
+                    flex: 0 1 $profession-width;
+                }
+                &.head-theme {
+                    flex: 0 1 $faculty-theme-width;
+                    text-align: center;
+                }
+                &.head-paid-place {
+                    flex: 0 1 $paid-place-width;
+                    text-align: center;
+                }
+                &.head-free-place {
+                    flex: 0 1 $free-place-width;
+                    text-align: center;
+                }
+                &.head-paid-points {
+                    flex: 0 1 $paid-points-width;
+                    text-align: center;
+                }
+                &.head-free-points {
+                    flex: 0 1 $paid-points-width;
+                    text-align: center;
+                }
+                &.head-total {
+                    flex: 0 1 $total-width;
+                    text-align: center;
+                }
+            }
+        }
+
+        // .univer__table-body
+
+        &-body {
+            border-top: 1px solid rgb(35 43 102 / 40%);
+
+            ol {
+                display: flex;
+
+                & > :not(:last-child) {
+                    border-right: 1px solid rgba(35, 43, 102, 0.4);
+                }
+
+                li {
+                    padding-top: 12px;
+                    font-style: normal;
+                    font-weight: 400;
+                    font-size: 12px;
+                    line-height: 15px;
+                    color: #233066;
+                    width: 100%;
+
+                    a {
+                        text-decoration: underline;
+                        color: inherit;
+                    }
+
+                    &.faculty-name {
+                        flex: 0 1 $faculty-name-width;
+                        padding-right: 20px;
+                    }
+                    &.profession {
+                        flex: 0 1 $profession-width;
+                        padding-left: 19px;
+                        padding-right: 15px;
+                    }
+                    &.faculty-theme {
+                        flex: 0 1 $faculty-theme-width;
+                        text-align: center;
+                    }
+                    &.paid-place {
+                        flex: 0 1 $paid-place-width;
+                        text-align: center;
+                    }
+                    &.paid-points {
+                        flex: 0 1 $paid-points-width;
+                        text-align: center;
+                    }
+                    &.free-place {
+                        flex: 0 1 $free-place-width;
+                        text-align: center;
+                    }
+                    &.free-points {
+                        flex: 0 1 $free-points-width;
+                        text-align: center;
+                    }
+                    &.total {
+                        flex: 0 1 $total-width;
+                        text-align: center;
+                    }
+                }
+            }
+        }
+    }
+
+    // .univer__other
+
+    &__other {
+        margin-top: 36px;
+        margin-bottom: 99px;
+        display: flex;
+
+        // .univer__other-information
+
+        &-information {
+            & > :not(:last-child) {
+                margin-bottom: 25px;
+            }
+
+            // .univer__other-information-article
+
+            &-article {
+                h3 {
+                    font-style: normal;
+                    font-weight: 700;
+                    font-size: 14px;
+                    line-height: 17px;
+                    color: #233066;
+                    margin-bottom: 25px;
+                }
+
+                p {
+                    font-style: normal;
+                    font-weight: 400;
+                    font-size: 14px;
+                    line-height: 17px;
+                    color: #233066;
+
+                    strong {
+                        font-weight: 700;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,330 @@
+.univer__your-points {
+    display: flex;
+    align-items: center;
+    margin-bottom: 28px;
+
+    p {
+        font-style: normal;
+        font-weight: 700;
+        font-size: 28px;
+        line-height: 34px;
+        color: #474a66;
+    }
+
+    span {
+        font-size: 32px;
+        font-weight: 900;
+        background: linear-gradient(63.99deg, #e42689 9.2%, #fcb62a 100.15%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+}
+
+.univer__suits {
+    margin-bottom: 20px;
+    padding: 25px 9px 50px 30px;
+    background: #ffffff;
+    border-radius: 20px;
+
+    .univer-name {
+        line-height: 25px;
+    }
+
+    .univer__table-head {
+        margin-bottom: 9px;
+        li {
+            font-size: 12px;
+        }
+    }
+
+    .univer__table-body {
+        ol {
+            li {
+                padding-top: 16px;
+            }
+        }
+        & > :first-child {
+            li {
+                padding-top: 8px;
+            }
+        }
+
+        & > :last-child {
+            li {
+                padding-bottom: 29px;
+            }
+        }
+
+        li {
+            font-weight: 450;
+            font-size: 10px;
+            line-height: 12px;
+        }
+    }
+
+    .univer__information {
+        align-items: center;
+    }
+
+    .univer-name {
+        font-size: 22px;
+    }
+
+    .univer__information-logo {
+        width: 60px;
+        height: 50px;
+        background: #a1b4f2;
+
+        img {
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    .univer-name {
+        margin: 0;
+    }
+
+    ol {
+        li {
+            &.faculty-name {
+                font-weight: 700;
+                padding-right: 12px;
+            }
+
+            &.faculty-name,
+            &.head-faculty {
+                flex: 0 1 167px;
+            }
+            &.profession,
+            &.head-profession {
+                text-align: center;
+                flex: 0 1 164px;
+            }
+            &.paid-points,
+            &.head-paid-points {
+                text-align: center;
+                flex: 0 1 83px;
+            }
+            &.free-points,
+            &.head-free-points {
+                text-align: center;
+                flex: 0 1 83px;
+            }
+            &.dvi,
+            &.head-dvi {
+                text-align: center;
+                flex: 0 1 138px;
+            }
+            &.total,
+            &.head-total {
+                text-align: center;
+                flex: 0 1 95px;
+            }
+        }
+    }
+}
+
+.univer__columns {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+.change__result {
+    margin-left: 22px;
+    width: 270px;
+    flex: 0 0 270px;
+    border-radius: 20px;
+    padding: 23px 16px 56px 16px;
+    background: #ffffff;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+    // .change__result-body
+
+    &-body {
+    }
+
+    // .change__result-contnet
+
+    &-contnet {
+        border-radius: 20px;
+        padding: 23px 22px 18px 22px;
+        background: #f2fcff;
+        border-radius: 10px;
+        margin-bottom: 20px;
+    }
+
+    // .change__result-label
+
+    &-label {
+        display: inline-block;
+        margin-bottom: 28px;
+        font-style: normal;
+        font-weight: 450;
+        font-size: 14px;
+        line-height: 17px;
+        color: #233066;
+    }
+
+    // .change__result-row
+
+    &-row {
+    }
+
+    .select-row {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 6px;
+
+        select {
+            padding: 7px 11px 7px 7px;
+            flex: 1 1 auto;
+            height: 30px;
+            background: #ffffff;
+            border: 1px solid #d3ecf4;
+
+            font-style: normal;
+            font-weight: 450;
+            font-size: 12px;
+            line-height: 15px;
+            color: #233066;
+        }
+
+        input {
+            display: block;
+            text-align: center;
+
+            padding: 7px;
+            width: 30px;
+            height: 30px;
+            flex: 0 0 30px;
+            margin-left: 16px;
+
+            background: #ffffff;
+            border: 1px solid #d3ecf4;
+            font-style: normal;
+            font-weight: 450;
+            font-size: 12px;
+            line-height: 15px;
+            color: #233066;
+        }
+
+        // .select-row__add-row
+
+        &__add-row {
+            font-style: normal;
+            font-weight: 300;
+            font-size: 12px;
+            line-height: 15px;
+            color: #233066;
+            margin-top: 12px;
+            display: block;
+        }
+    }
+
+    // .change__result-points
+
+    &-points {
+        margin-bottom: 39px;
+
+        // .change__result-points-body
+
+        &-body {
+        }
+
+        span {
+            display: inline-block;
+            margin: 0 0 17px 0;
+            font-style: normal;
+            font-weight: 700;
+            font-size: 18px;
+            line-height: 22px;
+            color: #233066;
+        }
+    }
+
+    // .change__result-university
+
+    &-university {
+        // .change__result-university-body
+
+        &-body {
+        }
+
+        span {
+            display: inline-block;
+            font-style: normal;
+            font-weight: 700;
+            font-size: 18px;
+            line-height: 22px;
+            margin-bottom: 17px;
+            color: #233066;
+        }
+    }
+
+    // .change__result-change
+
+    &-change {
+        margin-top: 41px;
+
+        width: 100%;
+        height: 50px;
+        background: #ee676e;
+        border-radius: 30px;
+        font-style: normal;
+        font-weight: 450;
+        font-size: 16px;
+        line-height: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #ffffff;
+    }
+
+    // .change__result-help
+
+    &-help-btn {
+        width: 210px;
+        height: 50px;
+        left: 1045px;
+        top: 1157px;
+        background: #233066;
+        border-radius: 30px;
+        justify-content: center;
+        margin-top: 10px;
+        label {
+            font-style: normal;
+            font-weight: 450;
+            font-size: 14px;
+            line-height: 17px;
+
+            color: #ffffff !important;
+        }
+        margin-bottom: 0 !important;
+    }
+
+    .univer__actions {
+        margin: 0;
+        .univer__actions-body {
+            width: 100%;
+            background: #f2fcff;
+            border-radius: 10px;
+            box-shadow: none;
+            padding: 23px 15px 15px 15px;
+        }
+
+        a {
+            font-size: 14px;
+        }
+
+        .univer__actions-item-icon {
+            margin-right: 16px;
+        }
+    }
+}
+
+.univer__search-results.flex-auto {
+    flex: 1 1 auto;
+}

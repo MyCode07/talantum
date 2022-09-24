@@ -1,0 +1,183 @@
+@import "null";
+@import "mixins";
+@import url("http://fonts.cdnfonts.com/css/avenir-next-cyr");
+
+html,
+body {
+    font-family: "Avenir Next Cyr", sans-serif;
+}
+
+body {
+    background-color: #f0f8ff;
+}
+
+.container {
+    width: 100%;
+    padding-right: 10px;
+    padding-left: 10px;
+    margin-right: auto;
+    margin-left: auto;
+    @media (min-width: 1140px) {
+        max-width: 1140px;
+    }
+}
+
+.breadcrumb {
+    display: flex;
+    align-items: center;
+
+    font-style: normal;
+    font-weight: 450;
+    font-size: 18px;
+    line-height: 22px;
+
+    a {
+        color: #233066;
+    }
+    .last {
+        color: #7d8fad;
+    }
+    .separator {
+        margin: 0 3px;
+    }
+}
+
+.univer__actions {
+    // .univer__actions-vertical
+    &-vertical {
+        margin-left: 58px;
+
+        .univer__actions-body {
+            background: #ffffff;
+            padding: 41px 25px 25px 25px;
+            width: 270px;
+        }
+
+        .univer__actions-item {
+            margin-bottom: 30px;
+        }
+
+        .univer__actions-button {
+            width: 100%;
+            margin-top: 10px;
+        }
+    }
+
+    // .univer__actions-horizontal
+    &-horizontal {
+        max-width: 1140px;
+        width: 100%;
+        transition: all 0.3s ease 0s;
+
+        @media (max-width: 1140px) {
+            max-width: none;
+        }
+
+        &._fixed {
+            position: fixed;
+            bottom: 0;
+            z-index: 100;
+        }
+
+        .univer__actions-body {
+            background: #cae3fa;
+            padding: 20px 73px 20px 36px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .univer__actions-button {
+            width: 220px;
+        }
+    }
+
+    // .univer__actions-body
+
+    &-body {
+        border-radius: 20px;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    }
+
+    // .univer__actions-item
+
+    &-item {
+        display: flex;
+        align-items: center;
+
+        // .univer__actions-item-icon
+
+        &-icon {
+            margin-right: 22px;
+            flex: 0 0 30px;
+
+            img {
+                width: auto;
+            }
+        }
+
+        font-style: normal;
+        font-weight: 450;
+        font-size: 14px;
+        line-height: 17px;
+        color: #233066;
+    }
+
+    // .univer__actions-button
+
+    &-button {
+        display: block;
+        background: #233066;
+        border-radius: 30px;
+        padding: 17px 0;
+
+        text-align: center;
+        font-style: normal;
+        font-weight: 450;
+        font-size: 14px;
+        line-height: 17px;
+        color: #ffffff;
+    }
+}
+
+.pagination {
+    display: flex;
+    align-items: center;
+    margin: 40px 0;
+
+    & > :not(:last-child) {
+        margin-right: 20px;
+    }
+
+    a {
+        font-style: normal;
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 17px;
+        color: #233066;
+
+        &.current-page {
+            text-decoration: underline;
+        }
+    }
+}
+
+input[type="number"] {
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+}
+
+input[type="submit"] {
+    cursor: pointer; 
+}
+
+@import "listing";
+@import "university-cart";
+@import "selection";
+@import "suitable";
+@import "suits";
+@import "profession-cart";
+ 

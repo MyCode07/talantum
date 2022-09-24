@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.min.css">
+
+</head>
+
+<body>
+    <main class="page">
+        <section class="univer">
+            <div class="univer__content container">
+                <div class="univer__body">
+                    <div class="univer__links">
+                        <a href="">Вузы</a>
+                        <a href="">Колледжи</a>
+                        <a href="">Професии</a>
+                    </div>
+                    <nav class="breadcrumb">
+                        <p>
+                            <a href="">Главная</a><span class="separator">/</span>
+                            <span class="last">Калькулятор баллов</span>
+                        </p>
+                    </nav>
+                    <h1>Узнайте вузы и специальности в Москве, которые вам подходят для поступления</h1>
+                    <div class="suitable">
+                        <div class="suitable__body">
+                            <h3>Выберите предметы и укажите баллы:</h3>
+                            <p>Укажите свои баллы, чтобы узнать на какую специальность/факультет вы можете поступить</p>
+                            <span>или</span>
+                            <p>Укажите 100 баллов, чтобы посмотреть в какие вузы требуются выбранные вами предметы</p>
+                        </div>
+                    </div>
+                    <div class="subjects">
+                        <div class="subjects__body">
+                            <ol class="subject-grid">
+                                <li class="matematika">
+                                    <span>Математика</span>
+                                    <div>
+                                        <input type="text" maxlength="3" placeholder="100">
+                                    </div>
+                                    <img id="mat" src="img/svg/mat.svg" alt="">
+                                </li>
+                                <li class="russkiy-yazik">
+                                    <span>Русский язык</span>
+                                    <div>
+                                        <input type="text" maxlength="3" placeholder="100">
+                                    </div>
+                                    <img id="rus" src="img/svg/rus.svg" alt="">
+                                </li>
+                                <li class="istoria">
+                                    <span>История</span>
+                                    <div>
+                                        <input type="text" maxlength="3" placeholder="100">
+                                    </div>
+                                    <img id="history" src="img/svg/history.svg" alt="">
+                                </li>
+                                <li class="obshestvoznanine">
+                                    <span>Обществознание</span>
+                                    <div>
+                                        <input type="text" maxlength="3" placeholder="100">
+                                    </div>
+                                    <img id="obsh" src="img/svg/obsh.svg" alt="">
+                                </li>
+                                <li class="angliskiy-yazik">
+                                    <span>Английский язык</span>
+                                    <div>
+                                        <input type="text" maxlength="3" placeholder="100">
+                                    </div>
+                                    <img id="engl" src="img/svg/angl.svg" alt="">
+                                </li>
+                                <li class="fizika">
+                                    <span>Физика</span>
+                                    <div>
+                                        <input type="text" maxlength="3" placeholder="100">
+                                    </div>
+                                    <img id="physic" src="img/svg/phizic.svg" alt="">
+                                </li>
+                                <li class="biologia">
+                                    <span>Биология</span>
+                                    <div>
+                                        <input type="text" maxlength="3" placeholder="100">
+                                    </div>
+                                    <img id="bio" src="img/svg/bio.svg" alt="">
+                                </li>
+                                <li class="literatura">
+                                    <span>Литература</span>
+                                    <div>
+                                        <input type="text" maxlength="3" placeholder="100">
+                                    </div>
+                                    <img id="liter" src="img/svg/liter.svg" alt="">
+                                </li>
+                                <li class="geografiya">
+                                    <span>География</span>
+                                    <div>
+                                        <input type="text" maxlength="3" placeholder="100">
+                                    </div>
+                                    <img id="geo" src="img/svg/geo.svg" alt="">
+                                </li>
+                                <li class="informatika">
+                                    <span>Информатика</span>
+                                    <div>
+                                        <input type="text" maxlength="3" placeholder="100">
+                                    </div>
+                                    <img id="info" src="img/svg/matem.svg" alt="">
+                                </li>
+                                <li class="ximia">
+                                    <span>Химия</span>
+                                    <div>
+                                        <input type="text" maxlength="3" placeholder="100">
+                                    </div>
+                                    <img id="ximiya" src="img/svg/ximiya.svg" alt="">
+                                </li>
+                                <li class="dop-ekzameni">
+                                    <span>Вы готовы сдавать экзамены в вузе?</span>
+                                    <label class="custom-input">
+                                        <input type="checkbox">
+                                        <div class="checkmark">
+                                            <img id="checkmark" src="img/svg/checkmark.svg" alt="">
+                                        </div>
+                                    </label>
+                                </li>
+                            </ol>
+                            <div class="subjects__results">
+                                <div class="subjects__results-body">
+                                    <span class="subjects__results-title">Ваши результаты</span>
+                                    <div class="subjects__results-form">
+                                        <form>
+                                            <p>
+                                                <span>Сумма баллов</span>
+                                                <input type="text" readonly class="total-points" name="total-points">
+                                            </p>
+                                            <p>
+                                                <span>Спрогнозировать баллы на 2023 г.</span>
+                                                <input type="text" placeholder="увеличить на .... %" name="add-procent">
+                                            </p>
+                                            <p>
+                                                <span>Планируемые
+                                                    баллы на ДВИ</span>
+                                                <input type="text" placeholder="введите баллы" name="dvi-points">
+                                            </p>
+                                            <input type="submit" value="Подобрать варианты">
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+        </section>
+    </main>
+    <script src="js/app.min.js"></script>
+</body>
+
+</html>

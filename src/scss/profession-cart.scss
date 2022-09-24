@@ -1,0 +1,226 @@
+.univer__profession,
+.similar-profession__table {
+    // .univer__profession-body
+
+    &-body {
+        margin-bottom: 20px;
+        padding: 25px 9px 50px 30px;
+        background: #ffffff;
+        border-radius: 20px;
+    }
+
+    .univer-name {
+        line-height: 25px;
+    }
+
+    .univer__table-head {
+        margin-bottom: 9px;
+        li {
+            font-size: 12px;
+        }
+    }
+
+    .univer__table-body {
+        ol {
+            li {
+                padding-top: 16px;
+            }
+        }
+        & > :first-child {
+            li {
+                padding-top: 8px;
+            }
+        }
+
+        & > :last-child {
+            li {
+                padding-bottom: 29px;
+            }
+        }
+
+        li {
+            font-weight: 450;
+            font-size: 10px;
+            line-height: 12px;
+        }
+    }
+
+    .univer__information {
+        align-items: center;
+    }
+
+    .univer-name {
+        font-size: 22px;
+    }
+
+    .univer__information-logo {
+        width: 60px;
+        height: 50px;
+        background: #a1b4f2;
+
+        img {
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    .univer-name {
+        margin: 0;
+    }
+
+    ol {
+        li {
+            &.faculty-name {
+                font-weight: 700;
+                padding-right: 12px;
+            }
+
+            &.faculty-name,
+            &.head-faculty {
+                flex: 0 1 167px;
+            }
+            &.profession,
+            &.head-profession {
+                text-align: center;
+                flex: 0 1 164px;
+            }
+            &.paid-points,
+            &.head-paid-points {
+                text-align: center;
+                flex: 0 1 83px;
+            }
+            &.free-points,
+            &.head-free-points {
+                text-align: center;
+                flex: 0 1 83px;
+            }
+            &.dvi,
+            &.head-dvi {
+                text-align: center;
+                flex: 0 1 138px;
+            }
+            &.total,
+            &.head-total {
+                text-align: center;
+                flex: 0 1 95px;
+            }
+        }
+    }
+}
+
+.univer {
+    // .univer__profession
+
+    &__profession {
+        // .univer__profession-years
+
+        // .univer__profession-subtitle
+
+        &-subtitle {
+            margin-bottom: 18px;
+            font-style: normal;
+            font-weight: 450;
+            font-size: 18px;
+            line-height: 22px;
+            color: #233066;
+        }
+
+        &-years {
+            display: flex;
+            align-items: center;
+            margin-bottom: 47px;
+
+            & > :not(:last-child) {
+                margin-right: 40px;
+            }
+
+            li {
+                font-style: normal;
+                font-weight: 900;
+                font-size: 22px;
+                line-height: 27px;
+                color: #233066;
+
+                a {
+                    color: currentColor;
+                }
+            }
+
+            & > :last-child {
+                color: #ee676e;
+            }
+        }
+
+        // .univer__profession-dvi
+
+        &-dvi {
+            margin-top: 27px;
+            padding-left: 37px;
+            display: flex;
+            align-items: center;
+
+            span {
+                display: block;
+                font-style: normal;
+                font-weight: 900;
+                font-size: 12px;
+                line-height: 15px;
+                color: #233066;
+                margin-right: 32px;
+            }
+
+            ol {
+                display: flex;
+                align-items: center;
+
+                li {
+                    font-style: normal;
+                    font-weight: 450;
+                    font-size: 10px;
+                    line-height: 12px;
+                    color: #233066;
+                }
+            }
+        }
+    }
+}
+
+.profession__search-results {
+    margin-bottom: 75px;
+
+    & > :not(:last-child) {
+        margin-bottom: 20px;
+    }
+}
+
+.profession__results-similar {
+    h2 {
+        font-style: normal;
+        font-weight: 700;
+        font-size: 36px;
+        line-height: 44px;
+        color: #233066;
+        margin-bottom: 35px;
+    }
+}
+
+.similar-profession {
+    // .similar-profession__name
+
+    &__name {
+    }
+
+    // .similar-profession__count
+
+    &__count {
+    }
+
+    // .similar-profession__table
+
+    &__table {
+    }
+}
+
+.univer__aside {
+    flex: 0 0 270px;
+}
