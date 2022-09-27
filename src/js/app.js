@@ -137,7 +137,8 @@ if (subjectPoints) {
 function calcTotalPoints(subjectPoints, dviPoints) {
     let total = 0;
     let dviValue = +dviPoints.value
-    total = total + dviValue
+
+    total = total + +dviValue
 
     totalpoints.value = total
     subjectPoints.forEach(inp => {
@@ -152,7 +153,16 @@ function calcTotalPoints(subjectPoints, dviPoints) {
 const dviPoints = document.querySelector('.subjects__results-form input[name="dvi-points"]');
 if (dviPoints) {
     dviPoints.addEventListener('input', function () {
-        calcTotalPoints(subjectPoints, dviPoints)
+
+        // посчитать в пк версии
+        if (window.innerWidth > 767.98) {
+            calcTotalPoints(subjectPoints, dviPoints)
+        }
+        else {
+            // посчитать в мобильной версии
+            const allSubjectSelectInputs = document.querySelectorAll('.select-subjects .select-row input');
+            calcTotalPoints(allSubjectSelectInputs, dviPoints)
+        }
     })
 }
 
@@ -160,12 +170,9 @@ if (dviPoints) {
     маска для поля ввода: разрешено вводить только цыфры  и  нельзья начинать с 0
 */
 function maskInputNumber(input, lenght_3 = false) {
-    if (!/[0-9]/.test(input.value)) {
-        input.value = ''
-    }
-    if (!/[^0]/.test(input.value)) {
-        input.value = ''
-    }
+    input.value = input.value.replace(/\D/gi, '')
+    input.value = input.value.replace(/^[0]/gi, '')
+    input.value = input.value.replace(/\s+/gi, '')
 
     // вводе чисел не болше 100 : если вводимое больше 100 - срезаем последнюю цыфру 
     if (lenght_3 == true && +input.value > 100) {
@@ -180,6 +187,7 @@ if (addProcentToTotalPoints) {
         maskInputNumber(this, true)
     })
 }
+
 // поле с ДВИ баллом
 const addPointsToTotalPoints = document.querySelector('.subjects__results-form input[name="dvi-points"]')
 if (addPointsToTotalPoints) {
@@ -189,18 +197,105 @@ if (addPointsToTotalPoints) {
 }
 
 
+// суммирование баллов мобильная версия
+function calcTotalPointsmobile(selectInputs) {
+    if (selectInputs) {
+        selectInputs.forEach(input => {
+            input.addEventListener('input', function () {
+                maskInputNumber(input, true)
+                console.log();
+
+                if (input.value != '') {
+                    input.classList.add('_full')
+                }
+                else {
+                    input.classList.remove('_full')
+                }
+
+                calcTotalPoints(selectInputs, dviPoints)
+            })
+        })
+    }
+}
+const subjectSelectInputs = document.querySelectorAll('.select-subjects .select-row input');
+calcTotalPointsmobile(subjectSelectInputs);
+
+
+// добавление новых селектов предметов
+const subjectsSelect = document.querySelector('.select-subjects');
+const subjectsSelectBody = document.querySelector('.select-subjects__body');
+const addSubjectsSelectRowBtn = document.querySelector('.select-subjects__add-select');
+let addSubjectsStart = 0;
+const addMaxSubjectsCount = 1;
+
+if (addSubjectsSelectRowBtn) {
+    const newSelectRow =
+        `<div class="select-row">
+            <select>
+                <option value="" disabled selected hidden>выберите предмет
+                </option>
+                <option value="Математика">Математика</option>
+                <option value="Математика">Русский язык</option>
+                <option value="Математика">История</option>
+                <option value="Математика">Обществознание</option>
+                <option value="Математика">Английский язык</option>
+                <option value="Математика">Физика</option>
+                <option value="Математика">Биология</option>
+                <option value="Математика">Литература</option>
+                <option value="Математика">География</option>
+                <option value="Математика">Информатика</option>
+                <option value="Математика">Химия</option>
+            </select>
+            <input type="text" placeholder="баллы">
+        </div> `;
+
+    addSubjectsSelectRowBtn.addEventListener('click', function (e) {
+        e.preventDefault();
+
+        if (!addSubjectsSelectRowBtn.hasAttribute('disabled')) {
+            if (addSubjectsStart < addMaxSubjectsCount) {
+                subjectsSelectBody.insertAdjacentHTML('beforeend', newSelectRow)
+                addSubjectsStart++
+            }
+            setTimeout(() => {
+                if (addSubjectsStart == addMaxSubjectsCount) {
+                    addSubjectsSelectRowBtn.setAttribute('disabled', 'disabled')
+                }
+            }, 300);
+            const allSubjectSelectInputs = document.querySelectorAll('.select-subjects .select-row input');
+            calcTotalPointsmobile(allSubjectSelectInputs);
+        }
+    })
+}
+
+
+
 /*
     на странице калькулятора при активном чекбоксе 'Вы готовы сдавать экзамены в вузе?'
     активируем поле ввода балллов для ДВИ и наоборот
 */
-const ekzamCheckboxBlock = document.querySelector('.dop-ekzameni');
 const ekzamCheckbox = document.querySelector('.dop-ekzameni input');
 const dvipoints = document.querySelector('.subjects__results-dvi');
+
+const ekzamCheckboxMobile = document.querySelector('.dop-ekzameni__mobile input');
+
 if (ekzamCheckbox) {
     const dviPointsInput = document.querySelector('input[name="dvi-points"]');
 
     ekzamCheckbox.addEventListener('change', function () {
         if (!ekzamCheckbox.checked) {
+            dvipoints.classList.remove('_active')
+            dviPointsInput.setAttribute('readonly', true)
+        }
+        else {
+            dvipoints.classList.add('_active')
+            dviPointsInput.removeAttribute('readonly')
+            dviPointsInput.focus();
+        }
+    })
+
+    ekzamCheckboxMobile.addEventListener('change', function () {
+        if (!ekzamCheckboxMobile.checked) {
             dvipoints.classList.remove('_active')
             dviPointsInput.setAttribute('readonly', true)
         }
@@ -225,7 +320,7 @@ if (maskResultPointInputs) {
 }
 
 /*
-   на странице результатов в фильтре при выборе
+   на странице результатов в сайдбаре при выборе
    направления вуза активируем селект названия вуза 
 */
 const selectUniverDirection = document.querySelector('select[name="select-univer-direction"]')
@@ -237,6 +332,22 @@ if (selectUniverDirection) {
                 selectUniverName.disabled = false
             }
         }
+    })
+}
+
+
+/*
+   на странице результатов в мобильной версии
+   открываем сайдбаре при клике на кнопку
+*/
+
+const openResultsFilterBtn = document.querySelector('.change__result-mobile-bar button');
+const resultsFilterMobile = document.querySelector('.change__result-mobile-open');
+
+if (openResultsFilterBtn) {
+    openResultsFilterBtn.addEventListener('click', function () {
+        openResultsFilterBtn.classList.toggle('_active');
+        resultsFilterMobile.classList.toggle('_open');
     })
 }
 
@@ -257,13 +368,51 @@ function silderAdvantages() {
 silderAdvantages()
 
 
+// открыть мобильную попап форму при клике
+
+const openPopopFormBnts = document.querySelectorAll('._open-popup-form');
+const popupForm = document.querySelector('.popup__form');
+const body = document.body;
+
+if (popupForm) {
+    let windowWidth = 767.98;
+    openPopopFormBnts.forEach(btn => {
+        btn.addEventListener('click', function (e) {
+
+            if (btn.dataset.width) {
+                windowWidth = 992
+            }
+
+            if (window.innerWidth <= windowWidth) {
+                e.preventDefault();
+                popupForm.classList.add('_open')
+                body.classList.add('open-modal')
+            }
+
+        })
+    })
+
+    // закрыть мобильную попап форму при клике
+    const popupFormClose = document.querySelector('.popup__form-close');
+    const popupFormOverlay = document.querySelector('.popup__form-overlay');
+
+    popupFormClose.addEventListener('click', function () {
+        popupForm.classList.remove('_open')
+        body.classList.remove('open-modal')
+    })
+    popupFormOverlay.addEventListener('click', function () {
+        popupForm.classList.remove('_open')
+        body.classList.remove('open-modal')
+    })
+}
+
+
 
 function changeElementsPlace() {
 
     // на странице калькулятора мяняем рассположение чекбокса и поле ввода ДВИ баллов
     const subjectSelctFormTitle = document.querySelector('.subjects__results-title');
     if (subjectSelctFormTitle && window.innerWidth <= 767.98) {
-        subjectSelctFormTitle.before(ekzamCheckboxBlock)
         subjectSelctFormTitle.before(dvipoints)
     }
 
@@ -281,12 +430,19 @@ function changeElementsPlace() {
 
     // На странице справочника меняем рассположение адреса вуза ставим ее под назавнием вуза
     const univerItem = document.querySelectorAll('.univer__item');
-    if (univerItem) {
+    if (univerItem && window.innerWidth <= 767.98) {
         univerItem.forEach(item => {
-            item.querySelector('.univer__information').after(item.querySelector('.univer__item .univer__information-adress')); 
+            item.querySelector('.univer__information').after(item.querySelector('.univer__item .univer__information-adress'));
 
         })
     }
+
+    // на странице картоцйки профеции меням рассположение сайдбара ставим результатом
+    const aside = document.querySelector('.univer__aside');
+    if (aside && window.innerWidth <= 992) {
+        document.querySelector('.profession__search-results').after(aside)
+    }
+
 }
 changeElementsPlace()
 
