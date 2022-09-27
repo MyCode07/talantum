@@ -6,26 +6,36 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Главная</title>
+    <link rel="stylesheet" href="files/swiper.min.css">
     <link rel="stylesheet" href="css/style.min.css">
 </head>
 
 <body>
+    @@include('html/navigation.html')
     <main class="page">
-        <section class="directory">
+        <section class="directory bg-light-violet">
             <div class="container">
+                <div class="univer__links">
+                    <a href="" class="current-page">Вузы</a>
+                    <a href="">Колледжи</a>
+                    <a href="">Професии</a>
+                </div>
+                <nav class="breadcrumb">
+                    <p>
+                        <a href="">Главная</a><span class="separator">/</span>
+                        <span class="last">Справочник абитуриента</span>
+                    </p>
+                </nav>
                 <div class="directory__body">
                     <div class="directory__content">
                         <h1>Справочник абитуриента</h1>
-                        <p>В старших классах у каждого школьника назревает вопрос:<b> "что дальше?" </b>
+                        <p> В старших классах у каждого школьника назревает вопрос:<b> "что дальше?" </b>
                             <br>
                             Необходимо определиться с направлением и предметами, выбрать ВУЗы и факультеты, <br>
-                            осуществляющие подготовку по данному
-                            направлению, затем узнать проходные баллы и наметить <br> траекторию подготовки. <br><br>
-
-                            Поэтому мы настоятельно рекомендуем нашим ученикам как можно раньше пройти <br>
-                            профориентацию и
-                            определиться с предметами
-                            для сдачи.
+                            узнать проходные баллы и наметить траекторию подготовки.
+                            <br><br>
+                            Поэтому мы настоятельно рекомендуем нашим ученикам как можно раньше определиться <br>
+                            с предметами для поступления.
                         </p>
                     </div>
                     <div class="directory__image">
@@ -37,12 +47,15 @@
         <div class="advantages">
             <div class="container">
                 <div class="advantages__body">
-                    <ol>
-                        <li> Вся информация <br>о вузах </li>
-                        <li>Баллы необходимые <br> для поступления</li>
-                        <li>Популярные <br> направления</li>
-                        <li>Учет индивидуальных достижений, ДВИ и прочие нюансы поступления</li>
-                    </ol>
+                    <div class="swiper">
+                        <ol class="swiper-wrapper">
+                            <li class="swiper-slide item-violet"> Вся информация <br>о вузах </li>
+                            <li class="swiper-slide item-green">Баллы необходимые <br> для поступления</li>
+                            <li class="swiper-slide item-blue">Популярные <br> направления</li>
+                            <li class="swiper-slide item-orange">Учет индивидуальных достижений, ДВИ и прочие нюансы поступления
+                            </li>
+                        </ol>
+                    </div>
                 </div>
             </div>
         </div>
@@ -60,24 +73,21 @@
                                 <div class="search__university-search">
                                     <form action="">
                                         <input type="text" name="university-name" placeholder="Укажите название вуза">
-                                        <button>Найти</button>
+                                        <button>Найти <img src="img/svg/search-icon.svg" alt=""></button>
                                     </form>
                                 </div>
                             </div>
                             <div class="search__university-item ">
-                                <a href="" class="search__university-question">Какие были проходные баллы на платное и
-                                    на
-                                    бюджет в 2022 году?</a>
+                                <a href="" class="search__university-question">В какой вуз и на какую
+                                    специальность/факультет я могу поступить со своими баллами?</a>
                             </div>
                             <div class="search__university-item ">
-                                <a href="" class="search__university-question">Какие были проходные баллы на платное и
-                                    на
-                                    бюджет в 2022 году?</a>
+                                <a href="" class="search__university-question">Куда я могу поступить, сдав определенные
+                                    предметы?</a>
                             </div>
                             <div class="search__university-item ">
-                                <a href="" class="search__university-question">Какие были проходные баллы на платное и
-                                    на
-                                    бюджет в 2022 году?</a>
+                                <a href="" class="search__university-question">Могу ли я учесть возможные изменения
+                                    проходных баллов?</a>
                             </div>
                         </div>
                     </div>
@@ -96,7 +106,7 @@
                                 </div>
                             </div>
                             <div class="search__university-item has-search university-profession">
-                                <span class="search__university-question">Сколько мест и какая стоимость обучения в
+                                <span class="search__university-question">Сколько мест и какая стоимость обучения на
                                     интересующем меня специальности?</span>
                                 <div class="search__university-search">
                                     <form action="">
@@ -143,6 +153,7 @@
         </section>
         @@include('html/form.html')
     </main>
+    <script src="files/swiper.min.js"></script>
     <script src="js/app.min.js"></script>
 </body>
 

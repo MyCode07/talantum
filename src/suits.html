@@ -10,21 +10,22 @@
 </head>
 
 <body>
+    @@include('html/navigation.html')
     <main class="page">
         <section class="univer">
             <div class="univer__content container">
+                <div class="univer__links">
+                    <a href="">Вузы</a>
+                    <a href="">Колледжи</a>
+                    <a href="">Професии</a>
+                </div>
+                <nav class="breadcrumb">
+                    <p>
+                        <a href="">Главная</a><span class="separator">/</span>
+                        <span class="last">Калькулятор баллов</span>
+                    </p>
+                </nav>
                 <div class="univer__body">
-                    <div class="univer__links">
-                        <a href="">Вузы</a>
-                        <a href="">Колледжи</a>
-                        <a href="">Професии</a>
-                    </div>
-                    <nav class="breadcrumb">
-                        <p>
-                            <a href="">Главная</a><span class="separator">/</span>
-                            <span class="last">Калькулятор баллов</span>
-                        </p>
-                    </nav>
                     <h1>Узнайте вузы и специальности в Москве, которые вам подходят для поступления</h1>
                     <div class="univer__your-points">
                         <p>Ваш балл составляет -<span>292</span></p>
@@ -185,7 +186,7 @@
                                                         <option value="Математика">Математика</option>
                                                         <option value="Математика">Математика</option>
                                                     </select>
-                                                    <input type="number" placeholder="77">
+                                                    <input type="number" class="subject-points" value="77">
                                                 </div>
                                                 <div class="select-row">
                                                     <select>
@@ -193,7 +194,7 @@
                                                         <option value="Математика">Математика</option>
                                                         <option value="Математика">Математика</option>
                                                     </select>
-                                                    <input type="number" placeholder="77">
+                                                    <input type="number" class="subject-points" value="77">
                                                 </div>
                                                 <div class="select-row">
                                                     <select>
@@ -201,7 +202,7 @@
                                                         <option value="Математика">Математика</option>
                                                         <option value="Математика">Математика</option>
                                                     </select>
-                                                    <input type="number" placeholder="77">
+                                                    <input type="number" class="subject-points" value="77">
                                                 </div>
                                             </div>
                                         </div>
@@ -211,15 +212,15 @@
                                         <span>Фильтр по вузам</span>
                                         <div class="change__result-university-body">
                                             <div class="select-row">
-                                                <select>
-                                                    <option value="Направление вуза" selected>Направление вуза</option>
+                                                <select name="select-univer-direction">
+                                                    <option value="" disabled selected hidden>Направление вуза</option>
                                                     <option value="Направление 2">Направление 1</option>
                                                     <option value="Направление 3">Направление 2</option>
                                                 </select>
                                             </div>
                                             <div class="select-row">
-                                                <select>
-                                                    <option value="Название вуза" selected>Название вуза</option>
+                                                <select name="select-univer-name" disabled>
+                                                    <option value="" disabled selected hidden>Название вуза</option>
                                                     <option value="Название 2">Название 1</option>
                                                     <option value="Название 3">Название 2</option>
                                                 </select>
@@ -244,6 +245,3 @@
 </body>
 
 </html>
-
-
-git push -u origin main

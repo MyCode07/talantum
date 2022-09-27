@@ -10,43 +10,79 @@ $total-width: 135px;
 .univer {
     max-width: 100%;
     overflow: hidden;
+    padding-top: 125px;
 
     // .univer__body
 
     &__body {
         h1 {
-            margin: 25px 0 44px 0;
+            margin-bottom: 44px;
             font-style: normal;
             font-weight: 700;
             font-size: 36px;
             line-height: 44px;
             color: #233066;
+
+            @media (max-width: 767.98px) {
+                font-size: 30px;
+                line-height: 37px;
+                margin-bottom: 20px;
+            }
         }
         h3 {
             font-style: normal;
-            font-weight: 450;
+            font-weight: 600;
             font-size: 18px;
             line-height: 22px;
             margin: 29px 0 47px 0;
             color: #233066;
+
+            @media (max-width: 767.98px) {
+                font-size: 30px;
+                line-height: 37px;
+                margin-bottom: 20px;
+            }
+        }
+
+        a.address-change-place {
+            @media (max-width: 767.98px) {
+                display: block;
+                font-size: 12px;
+                line-height: 15px;
+                margin: 0 0 15px 0;
+            }
         }
     }
 
     // .univer__links
 
     &__links {
-        margin: 24px 0 39px 0;
+        margin-bottom: 39px;
         display: flex;
         align-items: center;
-        & > :nth-child(2) {
-            margin: 0 65px;
+
+        & > :not(:last-child) {
+            margin-right: 65px;
+
+            @media (max-width: 767.98px) {
+                margin-right: 20px;
+            }
         }
+
         a {
             font-style: normal;
-            font-weight: 700;
+            font-weight: 600;
             font-size: 18px;
             line-height: 22px;
             color: #233066;
+
+            &.current-page {
+                font-weight: 900;
+
+                @media (max-width: 767.98px) {
+                    text-decoration: underline;
+                }
+            }
         }
     }
 
@@ -73,6 +109,29 @@ $total-width: 135px;
             justify-content: center;
             background-color: #a1b4f2;
             border-radius: 10px;
+
+            img {
+                object-fit: contain;
+            }
+
+            @media (max-width: 767.98px) {
+                width: 134px;
+                flex: 0 0 134px;
+                height: 82px;
+            }
+
+            @media (max-width: 375px) {
+                width: 124px;
+                flex: 0 0 124px;
+                height: 76px;
+            }
+
+            @media (max-width: 360px) {
+                width: 100px;
+                flex: 0 0 100px;
+                height: 60px;
+                margin-right: 10px;
+            }
         }
 
         // .univer__information-content
@@ -85,18 +144,6 @@ $total-width: 135px;
         &-top {
             position: relative;
             padding: 7px 0 10px 0;
-
-            &:before {
-                position: absolute;
-                content: "";
-                left: -50px;
-                top: 0;
-                width: 687px;
-                height: 100%;
-                background: #ffffff;
-                border-radius: 20px;
-                z-index: -1;
-            }
         }
 
         // .univer__information-adress
@@ -109,6 +156,10 @@ $total-width: 135px;
                 font-size: 12px;
                 line-height: 15px;
                 color: #233066;
+
+                @media (max-width: 767.98px) {
+                    display: none;
+                }
             }
 
             a {
@@ -119,6 +170,12 @@ $total-width: 135px;
                 font-size: 22px;
                 line-height: 27px;
                 color: #233066;
+
+                @media (max-width: 767.98px) {
+                    font-size: 12px;
+                    line-height: 15px;
+                    margin: 0 0 15px 0;
+                }
             }
         }
 
@@ -127,9 +184,24 @@ $total-width: 135px;
         &-data {
             display: flex;
             align-items: center;
-            :first-child {
+
+            @media (max-width: 767.98px) {
+                flex-wrap: wrap;
+                padding-top: 8px;
+
+                p {
+                    margin-top: 7px;
+                }
+            }
+
+            @media (max-width: 360px) {
+                padding-top: 0;
+            }
+
+            & > :not(:last-child) {
                 margin-right: 44px;
             }
+
             p {
                 font-style: normal;
                 font-weight: 400;
@@ -174,9 +246,65 @@ $total-width: 135px;
         }
     }
 
+    //
+
+    .univer__information-points {
+        @media (max-width: 767.98px) {
+            margin-bottom: 34px;
+        }
+        h4 {
+            margin: 25px 0 5px 0;
+            font-style: normal;
+            font-weight: 700;
+            font-size: 18px;
+            line-height: 22px;
+            color: #233066;
+
+            @media (max-width: 767.98px) {
+                margin: 0 0 10px 0;
+            }
+        }
+        ol {
+            display: grid;
+            grid-template-columns: repeat(3, auto);
+            grid-template-rows: auto;
+            gap: 0 35px;
+
+            @media (max-width: 767.98px) {
+                display: grid;
+                grid-template-columns: repeat(2, auto);
+                grid-template-rows: auto;
+                gap: 0 26px;
+            }
+
+            li {
+                font-style: normal;
+                font-weight: 400;
+                font-size: 14px;
+                line-height: 17px;
+                color: #233066;
+
+                @media (max-width: 360px) {
+                    font-size: 12px;
+                    line-height: 15px;
+                }
+
+                span {
+                    font-weight: 700;
+                }
+            }
+        }
+    }
+
     // .univer__cart
 
     &__cart {
+        @media (max-width: 767.98px) {
+            .univer__information {
+                margin-bottom: 15px;
+            }
+        }
+
         .univer__table-body {
             & > :nth-child(4),
             & > :nth-child(5),
@@ -212,11 +340,33 @@ $total-width: 135px;
                 }
             }
         }
+
+        .univer__information-top {
+            &:before {
+                position: absolute;
+                content: "";
+                left: -50px;
+                top: 0;
+                width: 687px;
+                height: 100%;
+                background: #ffffff;
+                border-radius: 20px;
+                z-index: -1;
+
+                @media (max-width: 767.98px) {
+                    display: none;
+                }
+            }
+        }
     }
 
     // .univer__table
 
     &__table {
+        @media (max-width: 767.98px) {
+            display: none;
+        }
+
         // .univer__table-head
 
         &-head {
@@ -272,11 +422,20 @@ $total-width: 135px;
         &-body {
             border-top: 1px solid rgb(35 43 102 / 40%);
 
+            @media (max-width: 767.98px) {
+                border-top: none;
+            }
+
             ol {
                 display: flex;
+                justify-content: space-between;
 
                 & > :not(:last-child) {
                     border-right: 1px solid rgba(35, 43, 102, 0.4);
+
+                    @media (max-width: 767.98px) {
+                        border-right: none;
+                    }
                 }
 
                 li {
@@ -338,11 +497,21 @@ $total-width: 135px;
         margin-bottom: 99px;
         display: flex;
 
+        @media (max-width: 767.98px) {
+            flex-direction: column-reverse;
+            margin-top: 14px;
+            margin-bottom: 0;
+        }
+
         // .univer__other-information
 
         &-information {
             & > :not(:last-child) {
                 margin-bottom: 25px;
+
+                @media (max-width: 767.98px) {
+                    margin-bottom: 18px;
+                }
             }
 
             // .univer__other-information-article
@@ -355,6 +524,12 @@ $total-width: 135px;
                     line-height: 17px;
                     color: #233066;
                     margin-bottom: 25px;
+
+                    @media (max-width: 767.98px) {
+                        margin: 28px 0 18px 0;
+                        font-style: 12px;
+                        line-height: 15px;
+                    }
                 }
 
                 p {
@@ -363,6 +538,11 @@ $total-width: 135px;
                     font-size: 14px;
                     line-height: 17px;
                     color: #233066;
+
+                    @media (max-width: 767.98px) {
+                        font-style: 12px;
+                        line-height: 15px;
+                    }
 
                     strong {
                         font-weight: 700;

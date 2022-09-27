@@ -1,12 +1,15 @@
+.univer__profession-body {
+    margin-bottom: 20px;
+    padding: 33px 36px 40px 37px;
+    background: #ffffff;
+    border-radius: 20px;
+}
+
 .univer__profession,
 .similar-profession__table {
     // .univer__profession-body
 
     &-body {
-        margin-bottom: 20px;
-        padding: 25px 9px 50px 30px;
-        background: #ffffff;
-        border-radius: 20px;
     }
 
     .univer-name {
@@ -15,9 +18,6 @@
 
     .univer__table-head {
         margin-bottom: 9px;
-        li {
-            font-size: 12px;
-        }
     }
 
     .univer__table-body {
@@ -40,7 +40,6 @@
 
         li {
             font-weight: 450;
-            font-size: 10px;
             line-height: 12px;
         }
     }
@@ -70,40 +69,118 @@
 
     ol {
         li {
+            font-size: 12px;
+            text-align: center;
             &.faculty-name {
-                font-weight: 700;
                 padding-right: 12px;
+                text-align: left;
+                font-size: 12px;
             }
 
             &.faculty-name,
             &.head-faculty {
-                flex: 0 1 167px;
+                flex: 0 1 175px;
+                text-align: left;
+                font-weight: 700;
             }
-            &.profession,
-            &.head-profession {
-                text-align: center;
-                flex: 0 1 164px;
-            }
+
+            &.head-theme,
+            &.faculty-theme,
             &.paid-points,
-            &.head-paid-points {
-                text-align: center;
-                flex: 0 1 83px;
-            }
+            &.head-paid-points,
             &.free-points,
-            &.head-free-points {
-                text-align: center;
-                flex: 0 1 83px;
+            &.head-free-points,
+            &.paid-place,
+            &.head-paid-place,
+            &.head-paid-points,
+            &.free-place,
+            &.head-free-place {
+                flex: 0 1 99px;
+                font-weight: 700;
             }
-            &.dvi,
-            &.head-dvi {
-                text-align: center;
-                flex: 0 1 138px;
+
+            &.faculty-theme {
+                font-weight: 450;
             }
+
             &.total,
             &.head-total {
-                text-align: center;
-                flex: 0 1 95px;
+                flex: 0 1 101px;
+                font-weight: 700;
             }
+        }
+    }
+}
+.similar-profession__table {
+    padding: 33px 36px 27px 37px;
+    background: #ffffff;
+    border-radius: 20px;
+
+    .univer__table ol li {
+        position: relative;
+        &.faculty-name {
+            padding-left: 20px;
+        }
+    }
+
+    .univer__table-body {
+        & > :nth-child(4),
+        & > :nth-child(5),
+        & > :nth-child(6),
+        & > :nth-child(4n + 6),
+        & > :nth-child(5n + 6),
+        & > :nth-child(6n + 6) {
+            position: relative;
+            &:before {
+                position: absolute;
+                content: "";
+                left: -37px;
+                top: 0;
+                width: calc(100% + 37px + 36px);
+                height: 100%;
+                background-color: #d3ecf4;
+            }
+        }
+
+        & > :nth-child(3n) {
+            li {
+                padding-bottom: 20px;
+            }
+        }
+
+        & > :first-child,
+        & > :nth-child(4),
+        & > :nth-child(4n + 3) {
+            li {
+                padding-top: 15px;
+            }
+        }
+    }
+}
+
+.univer__table {
+    ol li {
+        &.head-univer-name,
+        &.univer-short-name {
+            flex: 0 1 88px;
+            text-align: left;
+            font-weight: 700;
+        }
+    }
+}
+
+.univer__profession .univer__table-body {
+    & > :last-child {
+        li {
+            padding-bottom: 0;
+        }
+    }
+}
+
+.similar-profession__table .univer__table-body {
+    & > :last-child {
+        li {
+            padding-bottom: 23px;
         }
     }
 }
@@ -163,10 +240,11 @@
                 display: block;
                 font-style: normal;
                 font-weight: 900;
-                font-size: 12px;
-                line-height: 15px;
+                font-size: 18px;
+                line-height: 20px;
                 color: #233066;
                 margin-right: 32px;
+                display: block;
             }
 
             ol {
@@ -175,10 +253,12 @@
 
                 li {
                     font-style: normal;
-                    font-weight: 450;
-                    font-size: 10px;
-                    line-height: 12px;
+                    font-weight: 600;
+                    font-size: 14px;
+                    line-height: 16px;
                     color: #233066;
+                    text-align: left;
+
                 }
             }
         }
@@ -223,4 +303,93 @@
 
 .univer__aside {
     flex: 0 0 270px;
+    margin-left: 20px;
+
+    aside {
+        background-color: #d9d9d9;
+        border-radius: 20px;
+        height: 400px;
+        margin-top: 38px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        
+    }
+
+    .aside__form {
+        background: linear-gradient(90deg, #0c65c9 0%, #58a4ea 100%);
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        border-radius: 20px;
+        padding: 38px 15px 41px 15px;
+
+        h3 {
+            font-style: normal;
+            font-weight: 750;
+            font-size: 22px;
+            line-height: 27px;
+            text-align: center;
+            color: #ffffff;
+            margin-bottom: 21px;
+            margin-top: 0;
+        }
+
+        p {
+            font-style: normal;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 20px;
+            text-align: center;
+            color: #ffffff;
+            margin-bottom: 76px;
+        }
+
+        // .aside__form-body
+
+        &-body {
+            background-repeat: no-repeat;
+            background-position: right top;
+        }
+
+        form {
+            padding: 0 10px;
+            div.input-bcg {
+                background-color: #f0f8ff;
+                border-radius: 15px;
+                margin-bottom: 10px;
+            }
+
+            input {
+                &[type="tel"],
+                &[type="text"],
+                &[type="email"] {
+                    font-style: normal;
+                    font-weight: 450;
+                    font-size: 14px;
+                    line-height: 17px;
+                    padding: 16px;
+
+                    background: linear-gradient(90deg, #0c65c9 0%, #58a4ea 100%);
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                    background-clip: text;
+                    text-fill-color: transparent;
+                }
+
+                &[type="submit"] {
+                    background: #ee676e;
+                    border-radius: 30px;
+                    padding: 16px;
+                    font-style: normal;
+                    font-weight: 450;
+                    font-size: 14px;
+                    line-height: 17px;
+                    text-align: center;
+                    color: #ffffff;
+                    width: 100%;
+                    margin-top: 12px;
+                }
+            }
+        }
+    }
 }

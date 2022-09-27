@@ -57,7 +57,7 @@
 
         li {
             font-weight: 450;
-            font-size: 10px;
+            font-size: 12px;
             line-height: 12px;
         }
     }
@@ -197,10 +197,11 @@
             text-align: center;
 
             padding: 7px;
-            width: 30px;
+            width: 35px;
             height: 30px;
             flex: 0 0 30px;
             margin-left: 16px;
+            padding: 0;
 
             background: #ffffff;
             border: 1px solid #d3ecf4;

@@ -3,19 +3,33 @@
 
     &-forms {
         overflow: unset;
+        padding-bottom: 35px;
+
+        @media (max-width: 767.98px) {
+            padding-bottom: 31px;
+        }
     }
     // .univer__tabs
 
     &__tabs {
         margin-bottom: 40px;
+
+        @media (max-width: 767.98px) {
+            margin-bottom: 20px;
+        }
+
         span {
             font-style: normal;
-            font-weight: 450;
+            font-weight: 600;
             font-size: 18px;
             line-height: 22px;
             color: #233066;
             margin-bottom: 16px;
             display: block;
+
+            @media (max-width: 767.98px) {
+                margin-bottom: 49px;
+            }
         }
         // .univer__tabs-body
 
@@ -23,6 +37,15 @@
             display: grid;
             grid-template-columns: repeat(5, 1fr);
             gap: 16px;
+
+            @media (max-width: 767.98px) {
+                grid-template-columns: repeat(2, 1fr);
+
+                .tab-select._select {
+                    grid-column: span 2;
+                }
+            }
+
             a {
                 background: #d6f1fb;
                 border-radius: 30px;
@@ -37,6 +60,27 @@
                 justify-content: center;
                 padding: 6.5px 0;
             }
+
+            @media (max-width: 1096px) {
+                .tab-select img {
+                    left: 10px;
+                }
+            }
+
+            @media (max-width: 860px) {
+                .tab-select img {
+                    left: 2px;
+                }
+            }
+
+            @media (max-width: 767.98px) {
+                .tab-select img {
+                    position: absolute;
+                    right: 20px;
+                    left: unset;
+                    top: calc(50% - 3px);
+                }
+            }
         }
     }
 
@@ -46,7 +90,13 @@
         background: #f2fcff;
         border: 1px solid #d3ecf4;
         border-radius: 10px;
-        margin-bottom: 35px;
+
+        @media (max-width: 767.98px) {
+            background: unset;
+            border: none;
+            border-radius: 0;
+        }
+
         // .univer__search-body
 
         &-body {
@@ -55,7 +105,20 @@
             align-items: center;
             justify-content: space-between;
             padding: 17px 34px 17px 14px;
+
+            @media (max-width: 767.98px) {
+                display: block;
+                padding: 0;
+            }
+
             form {
+                @media (max-width: 767.98px) {
+                    background: #f2fcff;
+                    border: 1px solid #d3ecf4;
+                    border-radius: 10px;
+                    padding: 20px 12px;
+                }
+
                 flex: 1 1 auto;
                 input {
                     font-style: normal;
@@ -74,6 +137,11 @@
             display: flex;
             align-items: center;
             position: relative;
+
+            @media (max-width: 767.98px) {
+                margin-top: 20px;
+                justify-content: space-between;
+            }
 
             span {
                 display: block;
@@ -109,6 +177,11 @@
                 right: 0;
                 top: 185%;
 
+                @media (max-width: 767.98px) {
+                    top: 150%;
+                    display: block;
+                }
+
                 opacity: 0;
                 pointer-events: none;
                 z-index: -50;
@@ -122,6 +195,11 @@
 
                 & > :not(:last-child) {
                     margin-right: 20px;
+
+                    @media (max-width: 767.98px) {
+                        margin-right: 0;
+                        margin-bottom: 20px;
+                    }
                 }
             }
         }
@@ -134,6 +212,51 @@
         border-radius: 20px;
         padding: 29px 51px 27px 51px;
         margin-bottom: 20px;
+
+        @media (max-width: 767.98px) {
+            padding: 26px 17px 101px 17px;
+            margin-bottom: 34px;
+
+            .univer__information {
+                flex-direction: row-reverse;
+                align-items: center;
+                justify-content: space-between;
+                margin-bottom: 23px;
+            }
+
+            .univer__information-top {
+                padding: 0;
+            }
+
+            .univer__information-adress {
+                margin-bottom: 24px;
+            }
+
+            .univer__information-logo {
+                margin-right: 0;
+                margin-left: 20px;
+                width: 103px;
+                flex: 0 0 103px;
+                height: 70px;
+            }
+
+            .univer__information-data {
+                display: none;
+            }
+
+            .table-mobile__more {
+                margin-top: 12px;
+            }
+        }
+
+        @media (max-width: 360px) {
+            .univer__information-logo {
+                margin-left: 10px;
+                width: 100px;
+                flex: 0 0 100px;
+                height: 68px;
+            }
+        }
 
         .univer__table-body {
             & > :last-child {
@@ -155,16 +278,17 @@
         .univer__table-head li {
             &.head-faculty,
             &.head-profession {
-                flex: 0 1 193px;
+                flex: 0 1 185px;
             }
         }
 
         .univer__table-body li {
             &.faculty-name,
             &.profession {
-                flex: 0 1 193px;
-                font-size: 10px;
+                flex: 0 1 201px;
+                font-size: 12px;
                 font-weight: 600;
+                padding-right: 5px;
             }
         }
 
@@ -189,6 +313,21 @@
                 flex: 0 1 107px;
             }
         }
+
+        .univer-name {
+            margin-bottom: 17px;
+
+            @media (max-width: 767.98px) {
+                font-size: 20px;
+                line-height: 25px;
+                margin-bottom: 0;
+            }
+
+            @media (max-width: 360px) {
+                font-size: 18px;
+                line-height: 22px;
+            }
+        }
     }
 
     // .univer-name
@@ -207,6 +346,31 @@
         line-height: 12px;
         color: #233066;
         display: block;
+
+        @media (max-width: 767.98px) {
+            display: none;
+        }
+    }
+}
+
+.show__search-results {
+    // .show__search-results-body
+
+    &-body {
+        h3 {
+            font-style: normal;
+            font-weight: 600;
+            font-size: 18px;
+            line-height: 22px;
+            margin: 29px 0 47px 0;
+            color: #233066;
+
+            @media (max-width: 767.98px) {
+                font-size: 18px;
+                line-height: 22px;
+                margin: 42px 0 34px 0;
+            }
+        }
     }
 }
 

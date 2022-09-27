@@ -11,21 +11,22 @@
 </head>
 
 <body>
+    @@include('html/navigation.html')
     <main class="page">
         <section class="univer">
             <div class="univer__content container">
+                <div class="univer__links">
+                    <a href="">Вузы</a>
+                    <a href="">Колледжи</a>
+                    <a href="">Професии</a>
+                </div>
+                <nav class="breadcrumb">
+                    <p>
+                        <a href="">Главная</a><span class="separator">/</span>
+                        <span class="last">Калькулятор баллов</span>
+                    </p>
+                </nav>
                 <div class="univer__body">
-                    <div class="univer__links">
-                        <a href="">Вузы</a>
-                        <a href="">Колледжи</a>
-                        <a href="">Професии</a>
-                    </div>
-                    <nav class="breadcrumb">
-                        <p>
-                            <a href="">Главная</a><span class="separator">/</span>
-                            <span class="last">Калькулятор баллов</span>
-                        </p>
-                    </nav>
                     <h1>Узнайте вузы и специальности в Москве, которые вам подходят для поступления</h1>
                     <div class="suitable">
                         <div class="suitable__body">
@@ -127,9 +128,69 @@
                             </ol>
                             <div class="subjects__results">
                                 <div class="subjects__results-body">
-                                    <span class="subjects__results-title">Ваши результаты</span>
+
+
+
                                     <div class="subjects__results-form">
-                                        <form>
+                                        <div class="form">
+                                            <div class="select-subjects">
+                                                <div class="select-subjects__body">
+                                                    <div class="select-row">
+                                                        <select>
+                                                            <option value="" disabled selected hidden >выберите предмет</option>
+                                                            <option value="Математика">Математика</option>
+                                                            <option value="Математика">Русский язык</option>
+                                                            <option value="Математика">История</option>
+                                                            <option value="Математика">Обществознание</option>
+                                                            <option value="Математика">Английский язык</option>
+                                                            <option value="Математика">Физика</option>
+                                                            <option value="Математика">Биология</option>
+                                                            <option value="Математика">Литература</option>
+                                                            <option value="Математика">География</option>
+                                                            <option value="Математика">Информатика</option>
+                                                            <option value="Математика">Химия</option>
+                                                        </select>
+                                                        <input type="text" placeholder="баллы">
+                                                    </div>
+                                                    <div class="select-row">
+                                                        <select>
+                                                            <option value="" disabled selected hidden>выберите предмет</option>
+                                                            <option value="Математика">Математика</option>
+                                                            <option value="Математика">Русский язык</option>
+                                                            <option value="Математика">История</option>
+                                                            <option value="Математика">Обществознание</option>
+                                                            <option value="Математика">Английский язык</option>
+                                                            <option value="Математика">Физика</option>
+                                                            <option value="Математика">Биология</option>
+                                                            <option value="Математика">Литература</option>
+                                                            <option value="Математика">География</option>
+                                                            <option value="Математика">Информатика</option>
+                                                            <option value="Математика">Химия</option>
+                                                        </select>
+                                                        <input type="text" placeholder="баллы">
+                                                    </div>
+                                                    <div class="select-row">
+                                                        <select>
+                                                            <option value="" disabled selected hidden>выберите предмет</option>
+                                                            <option value="Математика">Математика</option>
+                                                            <option value="Математика">Русский язык</option>
+                                                            <option value="Математика">История</option>
+                                                            <option value="Математика">Обществознание</option>
+                                                            <option value="Математика">Английский язык</option>
+                                                            <option value="Математика">Физика</option>
+                                                            <option value="Математика">Биология</option>
+                                                            <option value="Математика">Литература</option>
+                                                            <option value="Математика">География</option>
+                                                            <option value="Математика">Информатика</option>
+                                                            <option value="Математика">Химия</option>
+                                                        </select>
+                                                        <input type="text" placeholder="баллы">
+                                                    </div>
+                                                </div>
+                                                <a  href="" class="select-subjects__add-select">Добавить предмет</a>
+                                            </div>
+
+                                            <span class="subjects__results-title">Ваши результаты</span>
                                             <p>
                                                 <span>Сумма баллов</span>
                                                 <input type="text" readonly class="total-points" name="total-points">
@@ -138,13 +199,16 @@
                                                 <span>Спрогнозировать баллы на 2023 г.</span>
                                                 <input type="text" placeholder="увеличить на .... %" name="add-procent">
                                             </p>
-                                            <p>
-                                                <span>Планируемые
-                                                    баллы на ДВИ</span>
-                                                <input type="text" placeholder="введите баллы" name="dvi-points">
-                                            </p>
+
+                                            <div class="subjects__results-dvi">
+                                                <p>
+                                                    <span>Планируемые
+                                                        баллы на ДВИ</span>
+                                                    <input type="text" placeholder="введите баллы" name="dvi-points">
+                                                </p>
+                                            </div>
                                             <input type="submit" value="Подобрать варианты">
-                                        </form>
+                                        </div>
                                     </div>
                                 </div>
                             </div>

@@ -11,25 +11,26 @@
 </head>
 
 <body>
+    @@include('html/navigation.html')
     <main class="page">
         <section class="univer">
             <div class="container">
+                <div class="univer__links">
+                    <a href="">Вузы</a>
+                    <a href="">Колледжи</a>
+                    <a href="">Професии</a>
+                </div>
+                <nav class="breadcrumb">
+                    <p>
+                        <a href="">Главная</a><span class="separator">/</span>
+                        <a href="">Вузы</a><span class="separator">/</span>
+                        <a href="">Справочник по Вузам</a><span class="separator">/</span>
+                        <span class="last">Вуз</span>
+                    </p>
+                </nav>
                 <div class="univer__body">
                     <div class="univer__cart">
                         <div class="univer__top">
-                            <div class="univer__links">
-                                <a href="">Вузы</a>
-                                <a href="">Колледжи</a>
-                                <a href="">Професии</a>
-                            </div>
-                            <nav class="breadcrumb">
-                                <p>
-                                    <a href="">Главная</a><span class="separator">/</span>
-                                    <a href="">Вузы</a><span class="separator">/</span>
-                                    <a href="">Справочник по Вузам</a><span class="separator">/</span>
-                                    <span class="last">Вуз</span>
-                                </p>
-                            </nav>
                             <h1>Московский политехнический университет</h1>
                         </div>
                         <div class="univer__information">
@@ -40,27 +41,28 @@
                                 <div class="univer__information-top">
                                     <div class="univer__information-adress">
                                         <label>Адрес</label>
-                                        <a href="">г. Москва, ул. Академика Варги, дом 15</a>
+                                        <a href="" class="address-change-place">г. Москва, ул. Академика Варги, дом
+                                            15</a>
                                     </div>
                                     <div class="univer__information-data">
-                                        <p class="military">Воен.кафедра:<span>Есть</span></p>
-                                        <p class="accreditation">Аккредитация:<span>Государственная</span></p>
+                                        <p class="military">Воен.кафедра: <span> Есть</span></p>
+                                        <p class="accreditation">Аккредитация: <span> Государственный</span></p>
                                     </div>
                                 </div>
                                 <div class="univer__information-points">
                                     <h4>Минимальные баллы для подачи документов:</h4>
                                     <ol>
-                                        <li>русский язык —<span>36</span></li>
-                                        <li>математика —<span>27</span></li>
-                                        <li>физика —<span>36</span></li>
-                                        <li>химия —<span>36</span></li>
-                                        <li>ИКТ —<span>40</span></li>
-                                        <li>биология —<span>36</span></li>
-                                        <li>история —<span>32</span></li>
-                                        <li>география —<span>37</span></li>
-                                        <li>литература —<span>32</span></li>
-                                        <li>иностранный язык —<span>36</span></li>
-                                        <li>обществознание —<span>42</span></li>
+                                        <li>русский язык — <span> 36</span></li>
+                                        <li>математика — <span> 27</span></li>
+                                        <li>физика — <span> 36</span></li>
+                                        <li>химия — <span> 36</span></li>
+                                        <li>ИКТ — <span> 40</span></li>
+                                        <li>биология — <span> 36</span></li>
+                                        <li>история — <span> 32</span></li>
+                                        <li>география — <span> 7</span></li>
+                                        <li>литература — <span> 32</span></li>
+                                        <li>иностранный язык — <span> 36</span></li>
+                                        <li>обществознание — <span> 42</span></li>
                                     </ol>
                                 </div>
                             </div>
@@ -86,7 +88,7 @@
                                     <li class="free-place">150</li>
                                     <li class="paid-points">280</li>
                                     <li class="free-points">150</li>
-                                    <li class="total">560 000 Р</li>
+                                    <li class="total">560 000 <span class="ruble">Р</span></li>
                                 </ol>
                                 <ol class="univer-row">
                                     <li class="faculty-name">Факультет фундаментальной физико-химической инженерии</li>
@@ -97,7 +99,7 @@
                                     <li class="free-place">150</li>
                                     <li class="paid-points">280</li>
                                     <li class="free-points">150</li>
-                                    <li class="total">560 000 Р</li>
+                                    <li class="total">560 000 <span class="ruble">Р</span></li>
                                 </ol>
                                 <ol class="univer-row">
                                     <li class="faculty-name">Факультет фундаментальной физико-химической инженерии</li>
@@ -108,7 +110,7 @@
                                     <li class="free-place">150</li>
                                     <li class="paid-points">280</li>
                                     <li class="free-points">150</li>
-                                    <li class="total">560 000 Р</li>
+                                    <li class="total">560 000 <span class="ruble">Р</span></li>
                                 </ol>
                                 <ol class="univer-row">
                                     <li class="faculty-name">Факультет фундаментальной физико-химической инженерии</li>
@@ -119,7 +121,7 @@
                                     <li class="free-place">150</li>
                                     <li class="paid-points">280</li>
                                     <li class="free-points">150</li>
-                                    <li class="total">560 000 Р</li>
+                                    <li class="total">560 000 <span class="ruble">Р</span></li>
                                 </ol>
                                 <ol class="univer-row">
                                     <li class="faculty-name">Факультет фундаментальной физико-химической инженерии</li>
@@ -130,7 +132,7 @@
                                     <li class="free-place">150</li>
                                     <li class="paid-points">280</li>
                                     <li class="free-points">150</li>
-                                    <li class="total">560 000 Р</li>
+                                    <li class="total">560 000 <span class="ruble">Р</span></li>
                                 </ol>
                                 <ol class="univer-row">
                                     <li class="faculty-name">Факультет фундаментальной физико-химической инженерии</li>
@@ -141,7 +143,7 @@
                                     <li class="free-place">150</li>
                                     <li class="paid-points">280</li>
                                     <li class="free-points">150</li>
-                                    <li class="total">560 000 Р</li>
+                                    <li class="total">560 000 <span class="ruble">Р</span></li>
                                 </ol>
                                 <ol class="univer-row">
                                     <li class="faculty-name">Факультет фундаментальной физико-химической инженерии</li>
@@ -152,7 +154,7 @@
                                     <li class="free-place">150</li>
                                     <li class="paid-points">280</li>
                                     <li class="free-points">150</li>
-                                    <li class="total">560 000 Р</li>
+                                    <li class="total">560 000 <span class="ruble">Р</span></li>
                                 </ol>
                                 <ol class="univer-row">
                                     <li class="faculty-name">Факультет фундаментальной физико-химической инженерии</li>
@@ -163,7 +165,7 @@
                                     <li class="free-place">150</li>
                                     <li class="paid-points">280</li>
                                     <li class="free-points">150</li>
-                                    <li class="total">560 000 Р</li>
+                                    <li class="total">560 000 <span class="ruble">Р</span></li>
                                 </ol>
                                 <ol class="univer-row">
                                     <li class="faculty-name">Факультет фундаментальной физико-химической инженерии</li>
@@ -174,7 +176,7 @@
                                     <li class="free-place">150</li>
                                     <li class="paid-points">280</li>
                                     <li class="free-points">150</li>
-                                    <li class="total">560 000 Р</li>
+                                    <li class="total">560 000 <span class="ruble">Р</span></li>
                                 </ol>
                                 <ol class="univer-row">
                                     <li class="faculty-name">Факультет фундаментальной физико-химической инженерии</li>
@@ -185,7 +187,7 @@
                                     <li class="free-place">150</li>
                                     <li class="paid-points">280</li>
                                     <li class="free-points">150</li>
-                                    <li class="total">560 000 Р</li>
+                                    <li class="total">560 000 <span class="ruble">Р</span></li>
                                 </ol>
                                 <ol class="univer-row">
                                     <li class="faculty-name">Факультет фундаментальной физико-химической инженерии</li>
@@ -196,7 +198,7 @@
                                     <li class="free-place">150</li>
                                     <li class="paid-points">280</li>
                                     <li class="free-points">150</li>
-                                    <li class="total">560 000 Р</li>
+                                    <li class="total">560 000 <span class="ruble">Р</span></li>
                                 </ol>
                                 <ol class="univer-row">
                                     <li class="faculty-name">Факультет фундаментальной физико-химической инженерии</li>
@@ -207,9 +209,105 @@
                                     <li class="free-place">150</li>
                                     <li class="paid-points">280</li>
                                     <li class="free-points">150</li>
-                                    <li class="total">560 000 Р</li>
+                                    <li class="total">560 000 <span class="ruble">Р</span></li>
                                 </ol>
                             </div>
+                        </div>
+
+                        <div class="univer__table-mobile table-mobile">
+                            <div class="table-mobile__body">
+                                <div class="table-mobile__item">
+                                    <div class="table-mobile__top">
+                                        <ol>
+                                            <li class="table-mobile__profession">Прикладная математика и физика и
+                                                Кибернетика
+                                            </li>
+                                            <li class="table-mobile__theme">
+                                                <span class="bold">Рус</span>
+                                                <span>Био</span>
+                                                <span>Хим</span>
+                                            </li>
+                                        </ol>
+                                    </div>
+                                    <div class="table-mobile__bottom">
+                                        <ol>
+                                            <li class="table-mobile__free-points">
+                                                <span class="head">Бюджет баллы</span>
+                                                <span class="body">280</span>
+                                            </li>
+                                            <li class="table-mobile__paid-points">
+                                                <span class="head">Платное баллы</span>
+                                                <span class="body">180</span>
+                                            </li>
+                                            <li class="table-mobile__total">
+                                                <span class="head">Стоимость</span>
+                                                <span class="body">560 000 <span class="ruble">Р<span></span>
+                                            </li>
+                                        </ol>
+                                    </div>
+                                </div>
+                                <div class="table-mobile__item">
+                                    <div class="table-mobile__top">
+                                        <ol>
+                                            <li class="table-mobile__profession">Прикладная математика и физика и
+                                                Кибернетика
+                                            </li>
+                                            <li class="table-mobile__theme">
+                                                <span class="bold">Рус</span>
+                                                <span>Био</span>
+                                                <span>Хим</span>
+                                            </li>
+                                        </ol>
+                                    </div>
+                                    <div class="table-mobile__bottom">
+                                        <ol>
+                                            <li class="table-mobile__free-points">
+                                                <span class="head">Бюджет баллы</span>
+                                                <span class="body">280</span>
+                                            </li>
+                                            <li class="table-mobile__paid-points">
+                                                <span class="head">Платное баллы</span>
+                                                <span class="body">180</span>
+                                            </li>
+                                            <li class="table-mobile__total">
+                                                <span class="head">Стоимость</span>
+                                                <span class="body">560 000 <span class="ruble">Р<span></span>
+                                            </li>
+                                        </ol>
+                                    </div>
+                                </div>
+                                <div class="table-mobile__item">
+                                    <div class="table-mobile__top">
+                                        <ol>
+                                            <li class="table-mobile__profession">Прикладная математика и физика и
+                                                Кибернетика
+                                            </li>
+                                            <li class="table-mobile__theme">
+                                                <span class="bold">Рус</span>
+                                                <span>Био</span>
+                                                <span>Хим</span>
+                                            </li>
+                                        </ol>
+                                    </div>
+                                    <div class="table-mobile__bottom">
+                                        <ol>
+                                            <li class="table-mobile__free-points">
+                                                <span class="head">Бюджет баллы</span>
+                                                <span class="body">280</span>
+                                            </li>
+                                            <li class="table-mobile__paid-points">
+                                                <span class="head">Платное баллы</span>
+                                                <span class="body">180</span>
+                                            </li>
+                                            <li class="table-mobile__total">
+                                                <span class="head">Стоимость</span>
+                                                <span class="body">560 000 <span class="ruble">Р<span></span>
+                                            </li>
+                                        </ol>
+                                    </div>
+                                </div>
+                            </div>
+                            <a href="" class="table-mobile__more">Показать еще</a>
                         </div>
                         <div class="univer__other">
                             <div class="univer__other-information">

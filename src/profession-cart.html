@@ -10,23 +10,24 @@
 </head>
 
 <body>
+    @@include('html/navigation.html')
     <main class="page">
         <section class="univer">
             <div class="univer__content container">
+                <div class="univer__links">
+                    <a href="">Вузы</a>
+                    <a href="">Колледжи</a>
+                    <a href="">Професии</a>
+                </div>
+                <nav class="breadcrumb">
+                    <p>
+                        <a href="">Главная</a><span class="separator">/</span>
+                        <a href="">Вузы</a><span class="separator">/</span>
+                        <a href="">Справочник по вузам</a><span class="separator">/</span>
+                        <span class="last">Направление</span>
+                    </p>
+                </nav>
                 <div class="univer__body">
-                    <div class="univer__links">
-                        <a href="">Вузы</a>
-                        <a href="">Колледжи</a>
-                        <a href="">Професии</a>
-                    </div>
-                    <nav class="breadcrumb">
-                        <p>
-                            <a href="">Главная</a><span class="separator">/</span>
-                            <a href="">Вузы</a><span class="separator">/</span>
-                            <a href="">Справочник по вузам</a><span class="separator">/</span>
-                            <span class="last">Направление</span>
-                        </p>
-                    </nav>
                     <h1>Специальность <span class="_title-name">“Психология ......”</span> <span class="_title-univer">в
                             МГУ</span></h1>
                     <p class="univer__profession-subtitle">Узнайте как менялись вступительные баллы. Выберите учебный
@@ -55,8 +56,8 @@
                                                 <li class="head-faculty">Факультет</li>
                                                 <li class="head-theme">Предметы</li>
                                                 <li class="head-free-place">Бюджет <br> места</li>
-                                                <li class="head-free-place">Платные <br> баллы</li>
-                                                <li class="head-paid-points">Бюджет <br> баллы</li>
+                                                <li class="head-paid-place">Платные <br> места</li>
+                                                <li class="head-free-points">Бюджет <br> баллы</li>
                                                 <li class="head-paid-points">Платные <br> баллы</li>
                                                 <li class="head-total">Стоимость</li>
                                             </ol>
@@ -65,7 +66,7 @@
                                                     <li class="faculty-name">Факультет фундаментальной физико-химической
                                                         инженерии
                                                     </li>
-                                                    <li class="profession"> <a href="">Рус, Био, Хим</a></li>
+                                                    <li class="faculty-theme">Рус, Био, Хим</li>
                                                     <li class="free-place">280</li>
                                                     <li class="paid-place">150</li>
                                                     <li class="paid-points">280</li>
@@ -91,122 +92,145 @@
                                 <div class="similar-profession__table">
                                     <div class="univer__table">
                                         <ol class="univer__table-head">
+                                            <li class="head-univer-name">Вуз</li>
                                             <li class="head-faculty">Факультет</li>
                                             <li class="head-theme">Предметы</li>
                                             <li class="head-free-place">Бюджет <br> места</li>
-                                            <li class="head-free-place">Платные <br> баллы</li>
-                                            <li class="head-paid-points">Бюджет <br> баллы</li>
+                                            <li class="head-free-points">Бюджет <br> баллы</li>
                                             <li class="head-paid-points">Платные <br> баллы</li>
                                             <li class="head-total">Стоимость</li>
                                         </ol>
                                         <div class="univer__table-body">
                                             <ol>
+                                                <li class="univer-short-name">МГУ </li>
                                                 <li class="faculty-name">Факультет фундаментальной физико-химической
                                                     инженерии
                                                 </li>
-                                                <li class="profession"> <a href="">Рус, Био, Хим</a></li>
+                                                <li class="faculty-theme">Рус, Био, Хим</li>
                                                 <li class="free-place">280</li>
-                                                <li class="paid-place">150</li>
-                                                <li class="paid-points">280</li>
                                                 <li class="free-points">150</li>
+                                                <li class="paid-points">280</li>
                                                 <li class="total">560 000 Р</li>
                                             </ol>
                                             <ol>
+                                                <li class="univer-short-name">МГУ </li>
                                                 <li class="faculty-name">Факультет фундаментальной физико-химической
                                                     инженерии
                                                 </li>
-                                                <li class="profession"> <a href="">Рус, Био, Хим</a></li>
+                                                <li class="faculty-theme">Рус, Био, Хим</li>
                                                 <li class="free-place">280</li>
-                                                <li class="paid-place">150</li>
-                                                <li class="paid-points">280</li>
                                                 <li class="free-points">150</li>
+                                                <li class="paid-points">280</li>
                                                 <li class="total">560 000 Р</li>
                                             </ol>
                                             <ol>
+                                                <li class="univer-short-name">МГУ </li>
                                                 <li class="faculty-name">Факультет фундаментальной физико-химической
                                                     инженерии
                                                 </li>
-                                                <li class="profession"> <a href="">Рус, Био, Хим</a></li>
+                                                <li class="faculty-theme">Рус, Био, Хим</li>
                                                 <li class="free-place">280</li>
-                                                <li class="paid-place">150</li>
-                                                <li class="paid-points">280</li>
                                                 <li class="free-points">150</li>
+                                                <li class="paid-points">280</li>
                                                 <li class="total">560 000 Р</li>
                                             </ol>
                                             <ol>
+                                                <li class="univer-short-name">МГУ </li>
                                                 <li class="faculty-name">Факультет фундаментальной физико-химической
                                                     инженерии
                                                 </li>
-                                                <li class="profession"> <a href="">Рус, Био, Хим</a></li>
+                                                <li class="faculty-theme">Рус, Био, Хим</li>
                                                 <li class="free-place">280</li>
-                                                <li class="paid-place">150</li>
-                                                <li class="paid-points">280</li>
                                                 <li class="free-points">150</li>
+                                                <li class="paid-points">280</li>
                                                 <li class="total">560 000 Р</li>
                                             </ol>
                                             <ol>
+                                                <li class="univer-short-name">МГУ </li>
                                                 <li class="faculty-name">Факультет фундаментальной физико-химической
                                                     инженерии
                                                 </li>
-                                                <li class="profession"> <a href="">Рус, Био, Хим</a></li>
+                                                <li class="faculty-theme">Рус, Био, Хим</li>
                                                 <li class="free-place">280</li>
-                                                <li class="paid-place">150</li>
-                                                <li class="paid-points">280</li>
                                                 <li class="free-points">150</li>
+                                                <li class="paid-points">280</li>
                                                 <li class="total">560 000 Р</li>
                                             </ol>
                                             <ol>
+                                                <li class="univer-short-name">МГУ </li>
                                                 <li class="faculty-name">Факультет фундаментальной физико-химической
                                                     инженерии
                                                 </li>
-                                                <li class="profession"> <a href="">Рус, Био, Хим</a></li>
+                                                <li class="faculty-theme">Рус, Био, Хим</li>
                                                 <li class="free-place">280</li>
-                                                <li class="paid-place">150</li>
-                                                <li class="paid-points">280</li>
                                                 <li class="free-points">150</li>
+                                                <li class="paid-points">280</li>
                                                 <li class="total">560 000 Р</li>
                                             </ol>
                                             <ol>
+                                                <li class="univer-short-name">МГУ </li>
                                                 <li class="faculty-name">Факультет фундаментальной физико-химической
                                                     инженерии
                                                 </li>
-                                                <li class="profession"> <a href="">Рус, Био, Хим</a></li>
+                                                <li class="faculty-theme">Рус, Био, Хим</li>
                                                 <li class="free-place">280</li>
-                                                <li class="paid-place">150</li>
-                                                <li class="paid-points">280</li>
                                                 <li class="free-points">150</li>
+                                                <li class="paid-points">280</li>
                                                 <li class="total">560 000 Р</li>
                                             </ol>
                                             <ol>
+                                                <li class="univer-short-name">МГУ </li>
                                                 <li class="faculty-name">Факультет фундаментальной физико-химической
                                                     инженерии
                                                 </li>
-                                                <li class="profession"> <a href="">Рус, Био, Хим</a></li>
+                                                <li class="faculty-theme">Рус, Био, Хим</li>
                                                 <li class="free-place">280</li>
-                                                <li class="paid-place">150</li>
-                                                <li class="paid-points">280</li>
                                                 <li class="free-points">150</li>
+                                                <li class="paid-points">280</li>
                                                 <li class="total">560 000 Р</li>
                                             </ol>
                                             <ol>
+                                                <li class="univer-short-name">МГУ </li>
                                                 <li class="faculty-name">Факультет фундаментальной физико-химической
                                                     инженерии
                                                 </li>
-                                                <li class="profession"> <a href="">Рус, Био, Хим</a></li>
+                                                <li class="faculty-theme">Рус, Био, Хим</li>
                                                 <li class="free-place">280</li>
-                                                <li class="paid-place">150</li>
-                                                <li class="paid-points">280</li>
                                                 <li class="free-points">150</li>
+                                                <li class="paid-points">280</li>
                                                 <li class="total">560 000 Р</li>
                                             </ol>
-
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div class="univer__aside">
-
+                            <div class="aside__form">
+                                <div class="aside__form-body bg-blue"
+                                    style="background-image: url('img/svg/vesi.svg');">
+                                    <h3>Оцените свои шансы на поступление</h3>
+                                    <p>Записывайтесь на бесплатное тестирование в формате ЕГЭ</p>
+                                    <form>
+                                        <div class="card__form">
+                                            <div class="input-bcg">
+                                                <span>
+                                                    <input type="text" placeholder="Как вас зовут?">
+                                                </span>
+                                            </div>
+                                            <div class="input-bcg">
+                                                <span>
+                                                    <input type="tel" placeholder="Ваш телефон">
+                                                </span>
+                                            </div>
+                                            <div>
+                                                <input type="submit" value="Записаться">
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                            <aside>реклама</aside>
                         </div>
                     </div>
                 </div>
