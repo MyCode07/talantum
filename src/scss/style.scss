@@ -60,6 +60,10 @@ body {
     background-color: #dfdbef;
 }
 
+.bg-light-bluesky {
+    background-color: #cae3fa;
+}
+
 .check__chans {
     margin-bottom: 25px;
 
@@ -192,7 +196,7 @@ body {
 
         @media (max-width: 1140px) {
             max-width: none;
-            width: calc(100% - 20px);
+            width: calc(100% - 20px) !important;
         }
 
         &._fixed {

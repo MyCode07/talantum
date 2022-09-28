@@ -68,13 +68,17 @@
             line-height: 22px;
             color: #233066;
 
+            span {
+                font-weight: 600;
+            }
+
             @media (max-width: 767.98px) {
                 font-size: 16px;
                 line-height: 20px;
             }
 
             b {
-                font-weight: 700;
+                font-weight: 900;
             }
         }
     }
@@ -286,6 +290,28 @@
 
                 @media (max-width: 767.98px) {
                     padding: 13px 6px 13px 12px;
+                    position: relative;
+                }
+
+                span.data-placeholder {
+                    display: none;
+                    font-style: normal;
+                    font-weight: 400;
+                    font-size: 14px;
+                    line-height: 17px;
+                    color: #767272;
+                    position: absolute;
+                    left: 12px;
+                    top: 50%;
+                    pointer-events: none;
+                    width: 200px;
+                    transform: translate(0, -50%);
+
+
+                    @media (max-width: 475px) {
+                        display: block;
+                    }
+
                 }
 
                 input {
@@ -299,6 +325,7 @@
                     @media (max-width: 767.98px) {
                         font-size: 14px;
                         line-height: 17px;
+                        height: 100%;
                     }
                 }
 
