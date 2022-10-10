@@ -12,6 +12,7 @@
 
 <body>
     @@include('html/navigation.html')
+    @@include('html/header.html')
     <main class="page">
         <section class="directory bg-light-violet">
             <div class="container">
@@ -63,7 +64,8 @@
         <section class="search">
             <div class="container">
                 <div class="search__body">
-                    <h2>Воспользуйтесь <span> справочником абитуриента </span> или <span> калькулятором баллов</span> ,
+                    <h2>Воспользуйтесь <a href=""> справочником абитуриента </a> или <a href=""> калькулятором
+                            баллов</a>,
                         чтобы найти ответы на интересующие Вас вопросы!</h2>
                     <div class="search__university">
                         <h3>калькулятор баллов:</h3>
@@ -76,6 +78,17 @@
                                         <input type="text" name="university-name" placeholder="Укажите название вуза">
                                         <button>Найти <img src="img/svg/search-icon.svg" alt=""></button>
                                     </form>
+                                    <ul class="search__university-search-select results-select">
+                                        <li>
+                                            <a href="" class="result-select__item">МГУ</a>
+                                        </li>
+                                        <li>
+                                            <a href="" class="result-select__item">МГУ 1</a>
+                                        </li>
+                                        <li>
+                                            <a href="" class="result-select__item">МГУ 2</a>
+                                        </li>
+                                    </ul>
                                 </div>
                             </div>
                             <div class="search__university-item ">
@@ -104,11 +117,22 @@
                                             placeholder="Выберите направление (тип вуза)">
                                         <button>Найти</button>
                                     </form>
+                                    <ul class="search__university-search-select results-select">
+                                        <li>
+                                            <a href="" class="result-select__item">МГУ</a>
+                                        </li>
+                                        <li>
+                                            <a href="" class="result-select__item">МГУ 1</a>
+                                        </li>
+                                        <li>
+                                            <a href="" class="result-select__item">МГУ 2</a>
+                                        </li>
+                                    </ul>
                                 </div>
                             </div>
                             <div class="search__university-item has-search university-profession">
                                 <span class="search__university-question">Сколько мест и какая стоимость обучения на
-                                    интересующем меня специальности?</span>
+                                    интересующей меня специальности?</span>
                                 <div class="search__university-search">
                                     <form action="">
                                         <input type="text" name="university-profession"
@@ -116,6 +140,17 @@
                                         <span class="data-placeholder"></span>
                                         <button>Найти</button>
                                     </form>
+                                    <ul class="search__university-search-select results-select">
+                                        <li>
+                                            <a href="" class="result-select__item">МГУ</a>
+                                        </li>
+                                        <li>
+                                            <a href="" class="result-select__item">МГУ 1</a>
+                                        </li>
+                                        <li>
+                                            <a href="" class="result-select__item">МГУ 2</a>
+                                        </li>
+                                    </ul>
                                 </div>
                             </div>
                             <div class="search__university-item has-search university-location">
@@ -126,6 +161,17 @@
                                         <input type="text" name="university-location" placeholder="Выберте вуз">
                                         <button>Найти</button>
                                     </form>
+                                    <ul class="search__university-search-select results-select">
+                                        <li>
+                                            <a href="" class="result-select__item">МГУ</a>
+                                        </li>
+                                        <li>
+                                            <a href="" class="result-select__item">МГУ 1</a>
+                                        </li>
+                                        <li>
+                                            <a href="" class="result-select__item">МГУ 2</a>
+                                        </li>
+                                    </ul>
                                 </div>
                             </div>
                             <div class="search__university-item has-search university-advantages">
@@ -136,6 +182,17 @@
                                         <input type="text" name="university-advantages" placeholder="Выберте вуз">
                                         <button>Найти</button>
                                     </form>
+                                    <ul class="search__university-search-select results-select">
+                                        <li>
+                                            <a href="" class="result-select__item">МГУ</a>
+                                        </li>
+                                        <li>
+                                            <a href="" class="result-select__item">МГУ 1</a>
+                                        </li>
+                                        <li>
+                                            <a href="" class="result-select__item">МГУ 2</a>
+                                        </li>
+                                    </ul>
                                 </div>
                             </div>
                             <div class="search__university-item has-search university-abiturent">
@@ -146,6 +203,17 @@
                                         <input type="text" name="university-abiturent" placeholder="Выберте вуз">
                                         <button>Найти</button>
                                     </form>
+                                    <ul class="search__university-search-select results-select">
+                                        <li>
+                                            <a href="" class="result-select__item">МГУ</a>
+                                        </li>
+                                        <li>
+                                            <a href="" class="result-select__item">МГУ 1</a>
+                                        </li>
+                                        <li>
+                                            <a href="" class="result-select__item">МГУ 2</a>
+                                        </li>
+                                    </ul>
                                 </div>
                             </div>
                         </div>
@@ -155,6 +223,7 @@
         </section>
         @@include('html/form.html')
     </main>
+    @@include('html/footer.html')
     <script src="files/swiper.min.js"></script>
     <script src="js/app.min.js"></script>
 </body>

@@ -59,6 +59,10 @@
                 align-items: center;
                 justify-content: center;
                 padding: 6.5px 0;
+
+                &._choosed {
+                    background: #d6fbdc;
+                }
             }
 
             @media (max-width: 1096px) {
@@ -78,7 +82,7 @@
                     position: absolute;
                     right: 20px;
                     left: unset;
-                    top: calc(50% - 3px);
+                    top: calc(50% - 2px);
                 }
             }
         }
@@ -95,6 +99,10 @@
             background: unset;
             border: none;
             border-radius: 0;
+
+            .results-select {
+                top: 60%;
+            }
         }
 
         // .univer__search-body
@@ -140,7 +148,11 @@
 
             @media (max-width: 767.98px) {
                 margin-top: 20px;
-                justify-content: space-between;
+                justify-content: flex-start;
+
+                span {
+                    flex: 1 1 auto;
+                }
             }
 
             span {
@@ -179,7 +191,7 @@
 
                 @media (max-width: 767.98px) {
                     top: 150%;
-                    display: block;
+                    width: 100%;
                 }
 
                 opacity: 0;
@@ -197,7 +209,7 @@
                     margin-right: 20px;
 
                     @media (max-width: 767.98px) {
-                        margin-right: 0;
+                        margin-right: 16px;
                         margin-bottom: 20px;
                     }
                 }
@@ -214,8 +226,11 @@
         margin-bottom: 20px;
 
         @media (max-width: 767.98px) {
-            padding: 26px 17px 101px 17px;
+            padding: 26px 15px 101px 15px;
             margin-bottom: 34px;
+
+            background: #ffffff30;
+            box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 
             .univer__information {
                 flex-direction: row-reverse;
@@ -259,9 +274,11 @@
         }
 
         .univer__table-body {
-            & > :last-child {
-                li {
-                    padding-bottom: 10px;
+            .univer-row {
+                &:last-of-type {
+                    li {
+                        padding-bottom: 10px;
+                    }
                 }
             }
         }
@@ -278,7 +295,7 @@
         .univer__table-head li {
             &.head-faculty,
             &.head-profession {
-                flex: 0 1 185px;
+                flex: 0 1 201px;
             }
         }
 
@@ -339,17 +356,13 @@
     // .univer__more
 
     &__more {
-        margin-top: 5px;
+        margin-top: 10px;
         font-style: normal;
         font-weight: 700;
         font-size: 10px;
         line-height: 12px;
         color: #233066;
         display: block;
-
-        @media (max-width: 767.98px) {
-            display: none;
-        }
     }
 }
 
@@ -416,7 +429,6 @@
         left: 0;
         background: #d6f1fb;
         border-radius: 15px;
-        padding: 5px 0;
         overflow: hidden;
         z-index: 51 !important;
 
@@ -434,11 +446,20 @@
 
     width: 211px;
     text-align: center;
-    background: #d6f1fb;
     border-radius: 15px;
 
+    @media (max-width: 767.98px) {
+        width: 50%;
+    }
+
+    div {
+        font-size: 14px;
+        line-height: 17px;
+        text-align: center;
+        color: #233066;
+    }
+
     padding: 7px 0;
-    overflow: hidden;
     position: relative;
     flex-wrap: wrap;
     height: fit-content;
@@ -459,6 +480,21 @@
         position: relative;
         left: 30px;
         top: 1px;
+
+        @media (max-width: 767.98px) {
+            position: absolute;
+            right: 20px;
+            left: unset;
+            top: calc(50% - 2px);
+        }
+
+        @media (max-width: 390px) {
+            right: 10px;
+        }
+
+        @media (max-width: 340px) {
+            right: 7px;
+        }
     }
 
     // .advenced-select__body
@@ -467,40 +503,6 @@
         flex: 0 0 100%;
         a {
             display: block;
-        }
-
-        & > :first-child {
-            margin-top: 10px;
-        }
-    }
-}
-
-._select {
-    div,
-    img {
-        pointer-events: none;
-    }
-
-    img {
-        transition: all 0.3s ease 0s;
-    }
-
-    &-body {
-        max-height: 0;
-        transition: all 0.3s ease 0s;
-        opacity: 0;
-        z-index: -10;
-        pointer-events: none;
-    }
-
-    &._active {
-        img {
-            transform: rotate(180deg);
-        }
-        ._select-body {
-            z-index: 50;
-            opacity: 1;
-            pointer-events: all;
         }
     }
 }
@@ -524,5 +526,89 @@
         &.current-page {
             text-decoration: underline;
         }
+    }
+}
+
+@media (max-width: 767.98px) {
+    .univer__table {
+        display: block;
+    }
+
+    .univer__table-head {
+        display: none;
+    }
+}
+
+.univer-row {
+    @media (max-width: 767.98px) {
+        display: none !important;
+    }
+
+    &__mobile {
+        display: none;
+
+        &:not(:first-of-type) {
+            border-top: 1px solid #2330663b;
+            padding-top: 10px;
+        }
+
+        @media (max-width: 767.98px) {
+            display: block;
+        }
+    }
+}
+
+.univer__serach-reset {
+    position: relative;
+
+    display: none;
+
+    &._active {
+        display: block;
+    }
+
+    @media (any-hover: hover) {
+        &:hover {
+            span {
+                opacity: 1;
+            }
+
+            svg {
+                stroke: #db0000;
+                fill: #db0000;
+            }
+        }
+    }
+
+    span {
+        position: absolute;
+        top: -35px;
+        right: -17px;
+        display: block;
+        color: #db0000;
+        opacity: 0;
+        pointer-events: none;
+        transition: all 0.3s ease 0s;
+        font-size: 14px;
+        font-weight: 900;
+        padding: 0 !important;
+        margin: 0 !important;
+        line-height: 1em;
+    }
+}
+
+.reset-filter {
+    display: block;
+    width: 30px;
+    height: 30px;
+    margin-left: 15px;
+
+    svg {
+        width: 30px;
+        height: 30px;
+        pointer-events: none;
+        fill: #233066;
+        stroke: #233066;
+        transition: all 0.3s ease 0s;
     }
 }

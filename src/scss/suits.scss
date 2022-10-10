@@ -39,8 +39,13 @@
     background: #ffffff;
     border-radius: 20px;
 
-    @media (max-width:767.98px){
+    @media (max-width: 767.98px) {
         padding: 42px 18px;
+    }
+
+    .univer__more {
+        margin-top: 20px;
+        display: block;
     }
 
     .univer-name {
@@ -55,20 +60,34 @@
     }
 
     .univer__table-body {
+        .univer-row {
+            &:nth-child(n + 12) {
+                display: none;
+            }
+            &:last-of-type {
+                li {
+                    padding-bottom: 29px;
+                }
+            }
+        }
+        .univer-row__mobile {
+            &:nth-child(n + 12) {
+                display: none;
+            }
+        }
+
         ol {
             li {
                 padding-top: 16px;
+
+                @media (max-width: 767.98px) {
+                    padding-top: 0;
+                }
             }
         }
         & > :first-child {
             li {
                 padding-top: 8px;
-            }
-        }
-
-        & > :last-child {
-            li {
-                padding-bottom: 29px;
             }
         }
 
@@ -103,17 +122,17 @@
         li {
             &.faculty-name {
                 font-weight: 700;
-                padding-right: 12px;
+                padding-right: 10px;
             }
 
             &.faculty-name,
             &.head-faculty {
-                flex: 0 1 167px;
+                flex: 0 1 160px;
             }
             &.profession,
             &.head-profession {
                 text-align: center;
-                flex: 0 1 164px;
+                flex: 0 1 180px;
             }
             &.paid-points,
             &.head-paid-points {
@@ -128,7 +147,7 @@
             &.dvi,
             &.head-dvi {
                 text-align: center;
-                flex: 0 1 138px;
+                flex: 0 1 130px;
             }
             &.total,
             &.head-total {
@@ -145,8 +164,8 @@
         .univer-name {
             font-size: 20px;
             line-height: 25px;
-            
-            @media (max-width:360px){
+
+            @media (max-width: 360px) {
                 font-size: 18px;
             }
         }

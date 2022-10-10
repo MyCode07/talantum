@@ -95,6 +95,7 @@ $total-width: 135px;
 
         .selection-logo {
             width: 221px;
+            flex: 0 0 221px;
             height: 130px;
         }
 
@@ -299,44 +300,72 @@ $total-width: 135px;
     // .univer__cart
 
     &__cart {
+        .univer__more {
+            display: none;
+        }
+
         @media (max-width: 767.98px) {
             .univer__information {
                 margin-bottom: 15px;
             }
+
+            .univer__more {
+                display: block;
+            }
+
+            .univer__table {
+                padding: 30px 15px 36px 15px;
+                background: #ffffff;
+                border-radius: 20px;
+            }
         }
 
         .univer__table-body {
-            & > :nth-child(4),
-            & > :nth-child(5),
-            & > :nth-child(6),
-            & > :nth-child(4n + 6),
-            & > :nth-child(5n + 6),
-            & > :nth-child(6n + 6) {
-                position: relative;
-                &:before {
-                    position: absolute;
-                    content: "";
-                    left: 50%;
-                    transform: translate(-50%, 0);
-                    top: 0;
-                    width: 100vw;
-                    height: 100%;
-                    background-color: #d3ecf4;
-                    z-index: -1;
+            .univer-row {
+                &:nth-child(12n + 7),
+                &:nth-child(12n + 9),
+                &:nth-child(12n + 11) {
+                    position: relative;
+                    &:before {
+                        position: absolute;
+                        content: "";
+                        left: 50%;
+                        transform: translate(-50%, 0);
+                        top: 0;
+                        width: 100vw;
+                        height: 100%;
+                        background-color: #d3ecf4;
+                        z-index: -1;
+                    }
+                }
+
+                // .univer-row__mobile
+
+                &__mobile {
+                    
                 }
             }
 
-            & > :nth-child(3n) {
+            & > :nth-child(6n + 5) {
                 li {
                     padding-bottom: 20px;
                 }
             }
-
             & > :first-child,
             & > :nth-child(4),
             & > :nth-child(4n + 3) {
                 li {
                     padding-top: 17px;
+                }
+            }
+
+            @media (max-width: 767.98px) {
+                & > :first-child,
+                & > :nth-child(4),
+                & > :nth-child(4n + 3) {
+                    li {
+                        padding-top: 0;
+                    }
                 }
             }
         }
@@ -385,10 +414,10 @@ $total-width: 135px;
 
                 &.head-faculty {
                     flex: 0 1 $faculty-name-width;
-                    padding-right: 20px;
                 }
                 &.head-profession {
                     flex: 0 1 $profession-width;
+                    text-align: center;
                 }
                 &.head-theme {
                     flex: 0 1 $faculty-theme-width;
@@ -447,6 +476,10 @@ $total-width: 135px;
                     color: #233066;
                     width: 100%;
 
+                    @media (max-width: 767.98px) {
+                        padding-top: 0;
+                    }
+
                     a {
                         text-decoration: underline;
                         color: inherit;
@@ -464,6 +497,10 @@ $total-width: 135px;
                     &.faculty-theme {
                         flex: 0 1 $faculty-theme-width;
                         text-align: center;
+
+                        .bold {
+                            font-weight: 900 !important;
+                        }
                     }
                     &.paid-place {
                         flex: 0 1 $paid-place-width;
@@ -496,9 +533,11 @@ $total-width: 135px;
         margin-top: 36px;
         margin-bottom: 99px;
         display: flex;
+        justify-content: flex-end;
 
         @media (max-width: 767.98px) {
             flex-direction: column-reverse;
+            justify-content: flex-start;
             margin-top: 14px;
             margin-bottom: 0;
         }

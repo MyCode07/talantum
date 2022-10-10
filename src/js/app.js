@@ -1,22 +1,89 @@
-
 /*
-   на странице листинга показывем/скрываем кнопку 'Найти' 
+   на странице листинга показывем/скрываем кнопку 'Найти' и список релузьтатов
    при полном/пустом поле ввода 
 */
 const searchUniversityInputs = document.querySelectorAll('.search__university-search input');
 if (searchUniversityInputs) {
     searchUniversityInputs.forEach(input => {
+
+        // список результатов 
+        const resultSelects = input.closest('.search__university-search').querySelector('.results-select')
+
         input.addEventListener('input', function () {
             if (input.value == '') {
                 input.closest('form').querySelector('button').style.opacity = 0;
                 input.closest('form').querySelector('button').style.pointerEvents = 'none';
+
+                // при пустом поле поиска убираем атрибут
+                if (input.hasAttribute('has-result')) {
+                    input.removeAttribute('has-result')
+                }
+
+                resultSelects.style.display = 'none'
             }
             else {
                 input.closest('form').querySelector('button').style.opacity = 1;
                 input.closest('form').querySelector('button').style.pointerEvents = 'all';
+
+                // что-то из списка выбрано у инпута есть этот атрибут и список больше не показываем
+                if (input.hasAttribute('has-result')) {
+                    resultSelects.style.display = 'none'
+                }
+                else {
+                    resultSelects.style.display = 'block'
+                }
             }
         })
     });
+}
+
+/*
+     на странице листинга и на странице справочника
+     при клике на пункт из выпадающего списка записываем его текст в поле поиска
+*/
+
+document.addEventListener('click', function (e) {
+    let targetEl = e.target;
+
+    if (targetEl.classList.contains('result-select__item')) {
+        preventDefault(e);
+        const input = targetEl.closest('div').querySelector('input');
+        input.value = targetEl.textContent;
+        input.setAttribute('has-result', true);
+
+        targetEl.closest('.results-select').style.display = 'none';
+    }
+})
+
+function preventDefault(e) {
+    e.preventDefault();
+}
+
+
+/*
+   на странице справочника показывем/скрываем список релузьтатов
+   при полном/пустом поле ввода 
+*/
+const univerSearchInput = document.querySelector('.univer__search input');
+if (univerSearchInput) {
+    const resultSelects = document.querySelector('.univer__search').querySelector('.results-select')
+    univerSearchInput.addEventListener('input', function () {
+        if (univerSearchInput.value == '') {
+            resultSelects.style.display = 'none'
+
+            if (univerSearchInput.hasAttribute('has-result')) {
+                univerSearchInput.removeAttribute('has-result')
+            }
+        }
+        else {
+            if (univerSearchInput.hasAttribute('has-result')) {
+                resultSelects.style.display = 'none'
+            }
+            else {
+                resultSelects.style.display = 'block'
+            }
+        }
+    })
 }
 
 
@@ -252,7 +319,6 @@ function calcTotalPointsmobile(selectInputs) {
         selectInputs.forEach(input => {
             input.addEventListener('input', function () {
                 maskInputNumber(input, true)
-                console.log();
 
                 if (input.value != '') {
                     input.classList.add('_full')
@@ -507,46 +573,198 @@ if (popupForm) {
     })
 }
 
+// фильтр по годам на странице професии
 
+const yearTabs = document.querySelectorAll('.univer__profession-years li a');
+const professionSearchResults = document.querySelectorAll('.univer__search-results-year');
+if (yearTabs) {
+    yearTabs.forEach(year => {
+        year.addEventListener('click', function (e) {
+            e.preventDefault();
 
-function changeElementsPlace() {
-    // на странице калькулятора мяняем рассположение чекбокса и поле ввода ДВИ баллов
-    const subjectSelctFormTitle = document.querySelector('.subjects__results-title');
-    if (subjectSelctFormTitle && window.innerWidth <= 767.98) {
-        subjectSelctFormTitle.before(dvipoints)
-    }
+            let dataYear = year.dataset.year;
 
-    // на странице карточки вуза меняем рассположение адреса вуза ставим ее под назавнием вуза
-    const univerAddress = document.querySelector('.address-change-place');
-    if (univerAddress && window.innerWidth <= 767.98) {
-        document.querySelector('.univer__body h1').after(univerAddress);
-    }
+            yearTabs.forEach(year => {
+                if (year.classList.contains('current-year')) {
+                    year.classList.remove('current-year')
+                }
+            })
+            year.classList.add('current-year')
 
-    // на странице карточки вуза меняем рассположение минимальных баллов
-    const minimumPoints = document.querySelector('.univer__information-points');
-    if (minimumPoints && window.innerWidth <= 767.98) {
-        document.querySelector('.univer__information').after(minimumPoints);
-    }
-
-    // На странице справочника меняем рассположение адреса вуза ставим ее под назавнием вуза
-    const univerItem = document.querySelectorAll('.univer__item');
-    if (univerItem && window.innerWidth <= 767.98) {
-        univerItem.forEach(item => {
-            item.querySelector('.univer__information').after(item.querySelector('.univer__item .univer__information-adress'));
-
+            professionSearchResults.forEach(result => {
+                if (result.dataset.year == dataYear) {
+                    result.classList.add('current-year')
+                }
+                else {
+                    result.classList.remove('current-year')
+                }
+            })
         })
-    }
+    })
+}
 
-    // на странице картоцйки профеции меням рассположение сайдбара ставим результатом
-    const aside = document.querySelector('.univer__aside');
-    if (aside && window.innerWidth <= 992) {
-        document.querySelector('.profession__search-results').after(aside)
-    }
+const windowHeight = window.innerHeight;
+function changeElementsPlace() {
+    /*  на странице калькулятора мяняем рассположение чекбокса и поле ввода
+        ДВИ баллов только при определнных резрешениях и при горизонтальном изменении экран девайса
+    */
 
+    if (window.innerHeight == windowHeight) {
+        const subjectSelctFormTitle = document.querySelector('.subjects__results-title');
+        if (subjectSelctFormTitle && window.innerWidth <= 767.98) {
+            subjectSelctFormTitle.before(dvipoints)
+        }
+        // на странице карточки вуза меняем рассположение адреса вуза ставим ее под назавнием вуза
+        const univerAddress = document.querySelector('.address-change-place');
+        if (univerAddress && window.innerWidth <= 767.98) {
+            document.querySelector('.univer__body h1').after(univerAddress);
+        }
+
+        // на странице карточки вуза меняем рассположение минимальных баллов
+        const minimumPoints = document.querySelector('.univer__information-points');
+        if (minimumPoints && window.innerWidth <= 767.98) {
+            document.querySelector('.univer__information').after(minimumPoints);
+        }
+
+        // На странице справочника меняем рассположение адреса вуза ставим ее под назавнием вуза
+        const univerItem = document.querySelectorAll('.univer__item');
+        if (univerItem && window.innerWidth <= 767.98) {
+            univerItem.forEach(item => {
+                item.querySelector('.univer__information').after(item.querySelector('.univer__item .univer__information-adress'));
+            })
+        }
+
+        // на странице картоцйки профеции меням рассположение сайдбара ставим результатом
+        const aside = document.querySelector('.univer__aside');
+        if (aside && window.innerWidth <= 992) {
+            document.querySelector('.profession__search-results').after(aside)
+        }
+    }
 }
 changeElementsPlace()
 
 window.addEventListener('resize', () => {
-    silderAdvantages(); 3
+    silderAdvantages();
     changeElementsPlace();
 })
+
+
+// меню пк версии
+const openMenuButtons = document.querySelectorAll('.menu-js');
+if (openMenuButtons) {
+    openMenuButtons.forEach(btn => {
+        btn.addEventListener('click', function () {
+            document.querySelector('body').classList.toggle('menuopen');
+        })
+    })
+
+}
+
+
+
+// фиксация шапки при прокрутке
+const header = document.querySelector('.header');
+window.addEventListener('scroll', function () {
+    if (header && window.innerWidth > 767.98) {
+
+        const height = header.getBoundingClientRect().height;
+
+        if (window.scrollY >= height) {
+            header.classList.add('scroll')
+        }
+        else {
+            header.classList.remove('scroll')
+        }
+    }
+})
+
+
+// табы на странице спаравочника
+
+const searchUniverTabs = document.querySelectorAll('.univer__tabs a');
+if (searchUniverTabs) {
+    const selectMore = document.querySelector('.tab-select');
+    const selectTitle = document.querySelector('.tab-select ._select-title');
+    searchUniverTabs.forEach(tab => {
+        tab.addEventListener('click', function (e) {
+            e.preventDefault();
+
+
+            searchUniverTabs.forEach(item => {
+                if (item.classList.contains('_choosed')) {
+                    item.classList.remove('_choosed')
+                }
+            })
+            if (!tab.closest('.tab-select')) {
+                if (selectMore.classList.contains('_active')) {
+                    selectMore.classList.remove('_active')
+                }
+                if (selectMore.classList.contains('_choosed')) {
+                    selectMore.classList.remove('_choosed')
+                    selectTitle.textContent = selectTitle.dataset.title
+                }
+                tab.classList.add('_choosed')
+            }
+        })
+    })
+}
+
+const selectTabs = document.querySelectorAll('._select a');
+const reseFilter = document.querySelector('.univer__serach-reset');
+if (selectTabs) {
+    selectTabs.forEach(tab => {
+        const select = tab.closest('._select')
+        tab.addEventListener('click', function (e) {
+            e.preventDefault();
+
+            select.querySelectorAll('a').forEach(item => {
+                if (item.classList.contains('_choosed')) {
+                    item.classList.remove('_choosed')
+                }
+            })
+
+            tab.classList.add('_choosed')
+            select.querySelector('._select-title').textContent = tab.textContent
+            select.classList.add('_choosed');
+
+            // фильтр на странице справочника
+
+            if (tab.closest('.univer__search-advenced-selects')) {
+                reseFilter.classList.add('_active')
+            }
+        })
+    })
+}
+
+// фильтр на странице справочника
+const reseFilterBtn = document.querySelector('.reset-filter');
+if (reseFilterBtn) {
+    reseFilterBtn.addEventListener('click', function (e) {
+        e.preventDefault();
+        const activeSelects = document.querySelectorAll('.advenced-select._choosed');
+
+        if (activeSelects) {
+            activeSelects.forEach(select => {
+                select.classList.remove('_choosed')
+
+                select.querySelectorAll('a._choosed').forEach(selectItem => {
+                    selectItem.classList.remove('_choosed')
+                })
+            })
+
+            setTimeout(() => {
+                reseFilter.classList.remove('_active')
+            }, 500);
+        }
+    })
+}
+
+
+
+// удалить - это для навигации по страницам
+const closeNav = document.querySelector('.nav__close');
+if (closeNav) {
+    closeNav.addEventListener('click', function () {
+        document.querySelector('.nav').classList.toggle('_close');
+    })
+}

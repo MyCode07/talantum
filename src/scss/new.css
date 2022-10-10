@@ -1,0 +1,19 @@
+@media (min-width: 768px) {
+    .univer__table .profession,
+    .univer__table .faculty-name,
+    .univer__table .head-faculty,
+    .univer__table .univer-short-name,
+    .univer__table .profession,
+    .univer__table .head-univer-name{
+        text-align: center !important;
+    }
+
+    .univer__item .univer__more {
+        margin-top: 25px;
+    }
+}
+
+.univer__more {
+    font-size: 14px !important;
+    line-height: 17px !important;
+}
