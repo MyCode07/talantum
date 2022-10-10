@@ -163,7 +163,7 @@ $total-width: 135px;
                 }
             }
 
-            a {
+            a,div {
                 display: block;
                 margin: 3px 0 15px 0;
                 font-style: normal;
@@ -545,11 +545,13 @@ $total-width: 135px;
         // .univer__other-information
 
         &-information {
+            flex: 1 1 auto;
             & > :not(:last-child) {
                 margin-bottom: 25px;
 
                 @media (max-width: 767.98px) {
                     margin-bottom: 18px;
+                    flex: unset;
                 }
             }
 

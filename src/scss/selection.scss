@@ -573,10 +573,6 @@
                 opacity: 1;
             }
 
-            svg {
-                stroke: #db0000;
-                fill: #db0000;
-            }
         }
     }
 
@@ -607,8 +603,7 @@
         width: 30px;
         height: 30px;
         pointer-events: none;
-        fill: #233066;
-        stroke: #233066;
         transition: all 0.3s ease 0s;
+        opacity: 0.75;
     }
 }
